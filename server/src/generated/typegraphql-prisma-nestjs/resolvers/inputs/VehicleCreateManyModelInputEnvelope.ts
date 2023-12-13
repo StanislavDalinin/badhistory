@@ -1,0 +1,13 @@
+import { Args, ArgsType, Context, Field, Float, ID, Info, InputType, Int, Mutation, ObjectType, Query, ResolveField, Resolver, Root, registerEnumType } from "@nestjs/graphql";
+import * as GraphQLScalars from "graphql-scalars";
+import { Prisma } from "@prisma/client";
+import { DecimalJSScalar } from "../../scalars";
+import { VehicleCreateManyModelInput } from "../inputs/VehicleCreateManyModelInput";
+
+@InputType("VehicleCreateManyModelInputEnvelope", {})
+export class VehicleCreateManyModelInputEnvelope {
+  @Field(_type => [VehicleCreateManyModelInput], {
+    nullable: false
+  })
+  data!: VehicleCreateManyModelInput[];
+}

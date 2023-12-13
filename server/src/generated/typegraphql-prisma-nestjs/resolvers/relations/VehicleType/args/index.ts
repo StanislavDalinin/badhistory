@@ -1,0 +1,1 @@
+export { VehicleTypeVehicleArgs } from "./VehicleTypeVehicleArgs";

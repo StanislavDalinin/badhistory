@@ -1,0 +1,14 @@
+export { AggregateVehicleTypeArgs } from "./AggregateVehicleTypeArgs";
+export { CreateManyVehicleTypeArgs } from "./CreateManyVehicleTypeArgs";
+export { CreateOneVehicleTypeArgs } from "./CreateOneVehicleTypeArgs";
+export { DeleteManyVehicleTypeArgs } from "./DeleteManyVehicleTypeArgs";
+export { DeleteOneVehicleTypeArgs } from "./DeleteOneVehicleTypeArgs";
+export { FindFirstVehicleTypeArgs } from "./FindFirstVehicleTypeArgs";
+export { FindFirstVehicleTypeOrThrowArgs } from "./FindFirstVehicleTypeOrThrowArgs";
+export { FindManyVehicleTypeArgs } from "./FindManyVehicleTypeArgs";
+export { FindUniqueVehicleTypeArgs } from "./FindUniqueVehicleTypeArgs";
+export { FindUniqueVehicleTypeOrThrowArgs } from "./FindUniqueVehicleTypeOrThrowArgs";
+export { GroupByVehicleTypeArgs } from "./GroupByVehicleTypeArgs";
+export { UpdateManyVehicleTypeArgs } from "./UpdateManyVehicleTypeArgs";
+export { UpdateOneVehicleTypeArgs } from "./UpdateOneVehicleTypeArgs";
+export { UpsertOneVehicleTypeArgs } from "./UpsertOneVehicleTypeArgs";

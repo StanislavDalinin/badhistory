@@ -1,0 +1,14 @@
+export { AggregateLotArgs } from "./AggregateLotArgs";
+export { CreateManyLotArgs } from "./CreateManyLotArgs";
+export { CreateOneLotArgs } from "./CreateOneLotArgs";
+export { DeleteManyLotArgs } from "./DeleteManyLotArgs";
+export { DeleteOneLotArgs } from "./DeleteOneLotArgs";
+export { FindFirstLotArgs } from "./FindFirstLotArgs";
+export { FindFirstLotOrThrowArgs } from "./FindFirstLotOrThrowArgs";
+export { FindManyLotArgs } from "./FindManyLotArgs";
+export { FindUniqueLotArgs } from "./FindUniqueLotArgs";
+export { FindUniqueLotOrThrowArgs } from "./FindUniqueLotOrThrowArgs";
+export { GroupByLotArgs } from "./GroupByLotArgs";
+export { UpdateManyLotArgs } from "./UpdateManyLotArgs";
+export { UpdateOneLotArgs } from "./UpdateOneLotArgs";
+export { UpsertOneLotArgs } from "./UpsertOneLotArgs";

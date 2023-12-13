@@ -1,0 +1,14 @@
+export { AggregateMakeArgs } from "./AggregateMakeArgs";
+export { CreateManyMakeArgs } from "./CreateManyMakeArgs";
+export { CreateOneMakeArgs } from "./CreateOneMakeArgs";
+export { DeleteManyMakeArgs } from "./DeleteManyMakeArgs";
+export { DeleteOneMakeArgs } from "./DeleteOneMakeArgs";
+export { FindFirstMakeArgs } from "./FindFirstMakeArgs";
+export { FindFirstMakeOrThrowArgs } from "./FindFirstMakeOrThrowArgs";
+export { FindManyMakeArgs } from "./FindManyMakeArgs";
+export { FindUniqueMakeArgs } from "./FindUniqueMakeArgs";
+export { FindUniqueMakeOrThrowArgs } from "./FindUniqueMakeOrThrowArgs";
+export { GroupByMakeArgs } from "./GroupByMakeArgs";
+export { UpdateManyMakeArgs } from "./UpdateManyMakeArgs";
+export { UpdateOneMakeArgs } from "./UpdateOneMakeArgs";
+export { UpsertOneMakeArgs } from "./UpsertOneMakeArgs";

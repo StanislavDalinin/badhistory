@@ -1,0 +1,38 @@
+const { withExpo } = require("@expo/next-adapter");
+const { withGluestackUI } = require("@gluestack/ui-next-adapter");
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // reanimated (and thus, Moti) doesn't work with strict mode currently...
+  // https://github.com/nandorojo/moti/issues/224
+  // https://github.com/necolas/react-native-web/pull/2330
+  // https://github.com/nandorojo/moti/issues/224
+  // once that gets fixed, set this back to true
+  reactStrictMode: false,
+  transpilePackages: [
+    "react-native",
+    "react-native-web",
+    "solito",
+    "dripsy",
+    "@dripsy/core",
+    "moti",
+    "app",
+    "react-native-reanimated",
+    "@expo/html-elements",
+    "react-native-gesture-handler",
+    "withGluestackUI",
+    "@gluestack-ui/themed",
+  ],
+  rewrites() {
+    return [
+      {
+        source: "/graphql",
+        // destination: "http://104.196.239.118:3001/graphql",
+        // destination: "http://localhost:3001/graphql",
+        destination: "http://server:3001/graphql",
+      },
+    ];
+  },
+};
+
+module.exports = withExpo(withGluestackUI(nextConfig));

@@ -1,0 +1,195 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator frontend-client {
+  provider = "prisma-client-js"
+
+  output = "../../client/packages/app/src/generated/client"
+}
+
+generator typegraphql-prisma-nestjs {
+  provider = "typegraphql-prisma-nestjs"
+  output   = "../src/generated/typegraphql-prisma-nestjs"
+}
+
+model Make {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String    @unique
+  models    Model[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model Model {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  make      Make      @relation(fields: [makeId], references: [id])
+  makeId    String    @db.ObjectId
+  name      String
+  vehicles  Vehicle[]
+  serieses  Series[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deleted   DateTime?
+
+  @@unique([makeId, name])
+}
+
+model Series {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  model     Model     @relation(fields: [modelId], references: [id])
+  modelId   String    @db.ObjectId
+  name      String
+  minYear   Int
+  maxYear   Int
+  vehicles  Vehicle[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deleted   DateTime?
+
+  @@unique([modelId, name])
+}
+
+model VehicleType {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deleted   DateTime?
+  Vehicle   Vehicle[]
+}
+
+type VehicleUnprocessed {
+  name String
+}
+
+model Vehicle {
+  id            String             @id @default(auto()) @map("_id") @db.ObjectId
+  vin           String?
+  model         Model              @relation(fields: [modelId], references: [id])
+  modelId       String             @db.ObjectId
+  seriesId      String?            @db.ObjectId
+  series        Series?            @relation(fields: [seriesId], references: [id])
+  vehicleType   VehicleType?       @relation(fields: [vehicleTypeId], references: [id])
+  vehicleTypeId String?            @db.ObjectId
+  year          Int
+  lots          Lot[]
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+  deleted       DateTime?
+  unprocessed   VehicleUnprocessed
+}
+
+type LotUnprocessed {
+  leftTrans         String
+  prebidClosedTrans String
+  buyNowCloseTime   DateTime?
+  soldBefore        Int?
+  status            Int
+  imgs              String[]
+}
+
+enum Auction {
+  iaai
+  copart
+}
+
+model Lot {
+  id                  String         @id @default(auto()) @map("_id") @db.ObjectId
+  auction             Auction
+  lotNumber           Int
+  sellingBranch       String
+  saleLocation        String
+  location            String
+  auctionDateTime     DateTime
+  seller              String
+  preAccidentValue    String
+  actualCashValue     String
+  estimatedRepairCost String
+  lastPreBid          Float?
+  finalBid            Int?
+  saleStatus          String
+  titleType           String
+  titleBrand          String
+  titleNotes          String
+  primaryDamage       String
+  secondaryDamage     String
+  loss                String
+  startCode           String
+  highlights          String
+  key                 String
+  odometer            Int
+  engine              String
+  fuelType            String
+  transmission        String
+  drivelineType       String
+  interiorColor       String
+  exteriorColor       String
+  buyNowPrice         Int?
+  bodyStyle           String
+  airbagsStatus       String
+  cylinders           Int?
+  manufacturedIn      String
+  sourceLastUpdated   String
+  vehicle             Vehicle        @relation(fields: [vehicleId], references: [id])
+  vehicleId           String         @db.ObjectId
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+  deleted             DateTime?
+  unprocessed         LotUnprocessed
+
+  @@unique([auction, lotNumber])
+}
+
+model ResumableProcessMirror {
+  id                   String                   @id @default(auto()) @map("_id") @db.ObjectId
+  parentProcessId      String?                  @db.ObjectId
+  parentProcess        ResumableProcessMirror?  @relation("SubProcesses", fields: [parentProcessId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  parentProcessStep    Int?
+  parentProcessStepKey String?
+  subProcesses         ResumableProcessMirror[] @relation("SubProcesses")
+  type                 ResumableProcessType
+  status               Status
+  currentStep          Int                      @default(0)
+  props                Json
+  state                Json
+  result               Json?
+  log                  LogRecord[]
+  createdAt            DateTime                 @default(now())
+  updatedAt            DateTime                 @updatedAt
+  deleted              DateTime?
+
+}
+
+enum ResumableProcessType {
+  bidCarsSearchScraper
+  bidCarsSearchMakeScraper
+  bidCarsSearchModelScraper
+  bidCarsSearchOdometerFallbackScraper
+  bidCarsSearchResultScraper
+  bidCarsSearchResultPageScraper
+}
+
+enum Status {
+  idle
+  pending
+  aborted
+  failed
+  succeeded
+}
+
+enum LogRecordType {
+  info
+  warn
+}
+
+type LogRecord {
+  type  LogRecordType
+  value Json
+}

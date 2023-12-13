@@ -1,0 +1,4300 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type LotUnprocessed {
+  leftTrans: String!
+  prebidClosedTrans: String!
+  buyNowCloseTime: DateTime
+  soldBefore: Int
+  status: Int!
+  imgs: [String!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Lot {
+  id: String!
+  auction: Auction!
+  lotNumber: Int!
+  sellingBranch: String!
+  saleLocation: String!
+  location: String!
+  auctionDateTime: DateTime!
+  seller: String!
+  preAccidentValue: String!
+  actualCashValue: String!
+  estimatedRepairCost: String!
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String!
+  titleType: String!
+  titleBrand: String!
+  titleNotes: String!
+  primaryDamage: String!
+  secondaryDamage: String!
+  loss: String!
+  startCode: String!
+  highlights: String!
+  key: String!
+  odometer: Int!
+  engine: String!
+  fuelType: String!
+  transmission: String!
+  drivelineType: String!
+  interiorColor: String!
+  exteriorColor: String!
+  buyNowPrice: Int
+  bodyStyle: String!
+  airbagsStatus: String!
+  cylinders: Int
+  manufacturedIn: String!
+  sourceLastUpdated: String!
+  vehicleId: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  unprocessed: LotUnprocessed!
+  vehicle: Vehicle!
+}
+
+enum Auction {
+  iaai
+  copart
+}
+
+type AffectedRowsOutput {
+  count: Int!
+}
+
+type LotAvgAggregate {
+  lotNumber: Float
+  lastPreBid: Float
+  finalBid: Float
+  odometer: Float
+  buyNowPrice: Float
+  cylinders: Float
+}
+
+type LotCountAggregate {
+  id: Int!
+  auction: Int!
+  lotNumber: Int!
+  sellingBranch: Int!
+  saleLocation: Int!
+  location: Int!
+  auctionDateTime: Int!
+  seller: Int!
+  preAccidentValue: Int!
+  actualCashValue: Int!
+  estimatedRepairCost: Int!
+  lastPreBid: Int!
+  finalBid: Int!
+  saleStatus: Int!
+  titleType: Int!
+  titleBrand: Int!
+  titleNotes: Int!
+  primaryDamage: Int!
+  secondaryDamage: Int!
+  loss: Int!
+  startCode: Int!
+  highlights: Int!
+  key: Int!
+  odometer: Int!
+  engine: Int!
+  fuelType: Int!
+  transmission: Int!
+  drivelineType: Int!
+  interiorColor: Int!
+  exteriorColor: Int!
+  buyNowPrice: Int!
+  bodyStyle: Int!
+  airbagsStatus: Int!
+  cylinders: Int!
+  manufacturedIn: Int!
+  sourceLastUpdated: Int!
+  vehicleId: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  deleted: Int!
+  _all: Int!
+}
+
+type LotMaxAggregate {
+  id: String
+  auction: Auction
+  lotNumber: Int
+  sellingBranch: String
+  saleLocation: String
+  location: String
+  auctionDateTime: DateTime
+  seller: String
+  preAccidentValue: String
+  actualCashValue: String
+  estimatedRepairCost: String
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String
+  titleType: String
+  titleBrand: String
+  titleNotes: String
+  primaryDamage: String
+  secondaryDamage: String
+  loss: String
+  startCode: String
+  highlights: String
+  key: String
+  odometer: Int
+  engine: String
+  fuelType: String
+  transmission: String
+  drivelineType: String
+  interiorColor: String
+  exteriorColor: String
+  buyNowPrice: Int
+  bodyStyle: String
+  airbagsStatus: String
+  cylinders: Int
+  manufacturedIn: String
+  sourceLastUpdated: String
+  vehicleId: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type LotMinAggregate {
+  id: String
+  auction: Auction
+  lotNumber: Int
+  sellingBranch: String
+  saleLocation: String
+  location: String
+  auctionDateTime: DateTime
+  seller: String
+  preAccidentValue: String
+  actualCashValue: String
+  estimatedRepairCost: String
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String
+  titleType: String
+  titleBrand: String
+  titleNotes: String
+  primaryDamage: String
+  secondaryDamage: String
+  loss: String
+  startCode: String
+  highlights: String
+  key: String
+  odometer: Int
+  engine: String
+  fuelType: String
+  transmission: String
+  drivelineType: String
+  interiorColor: String
+  exteriorColor: String
+  buyNowPrice: Int
+  bodyStyle: String
+  airbagsStatus: String
+  cylinders: Int
+  manufacturedIn: String
+  sourceLastUpdated: String
+  vehicleId: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type LotSumAggregate {
+  lotNumber: Int
+  lastPreBid: Float
+  finalBid: Int
+  odometer: Int
+  buyNowPrice: Int
+  cylinders: Int
+}
+
+type AggregateLot {
+  _count: LotCountAggregate
+  _avg: LotAvgAggregate
+  _sum: LotSumAggregate
+  _min: LotMinAggregate
+  _max: LotMaxAggregate
+}
+
+type LotGroupBy {
+  id: String!
+  auction: Auction!
+  lotNumber: Int!
+  sellingBranch: String!
+  saleLocation: String!
+  location: String!
+  auctionDateTime: DateTime!
+  seller: String!
+  preAccidentValue: String!
+  actualCashValue: String!
+  estimatedRepairCost: String!
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String!
+  titleType: String!
+  titleBrand: String!
+  titleNotes: String!
+  primaryDamage: String!
+  secondaryDamage: String!
+  loss: String!
+  startCode: String!
+  highlights: String!
+  key: String!
+  odometer: Int!
+  engine: String!
+  fuelType: String!
+  transmission: String!
+  drivelineType: String!
+  interiorColor: String!
+  exteriorColor: String!
+  buyNowPrice: Int
+  bodyStyle: String!
+  airbagsStatus: String!
+  cylinders: Int
+  manufacturedIn: String!
+  sourceLastUpdated: String!
+  vehicleId: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: LotCountAggregate
+  _avg: LotAvgAggregate
+  _sum: LotSumAggregate
+  _min: LotMinAggregate
+  _max: LotMaxAggregate
+}
+
+type MakeCount {
+  models: Int!
+}
+
+type Make {
+  id: String!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  _count: MakeCount
+  models(where: ModelWhereInput, orderBy: [ModelOrderByWithRelationInput!], cursor: ModelWhereUniqueInput, take: Int, skip: Int, distinct: [ModelScalarFieldEnum!]): [Model!]!
+}
+
+input ModelWhereInput {
+  AND: [ModelWhereInput!]
+  OR: [ModelWhereInput!]
+  NOT: [ModelWhereInput!]
+  id: StringFilter
+  makeId: StringFilter
+  vehicleTypeId: StringFilter
+  name: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  make: MakeRelationFilter
+  vehicleType: VehicleTypeRelationFilter
+  vehicles: VehicleListRelationFilter
+  serieses: SeriesListRelationFilter
+}
+
+input StringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringFilter
+}
+
+enum QueryMode {
+  default
+  insensitive
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input DateTimeFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input NestedDateTimeFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+  isSet: Boolean
+}
+
+input NestedDateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+  isSet: Boolean
+}
+
+input MakeRelationFilter {
+  is: MakeWhereInput
+  isNot: MakeWhereInput
+}
+
+input MakeWhereInput {
+  AND: [MakeWhereInput!]
+  OR: [MakeWhereInput!]
+  NOT: [MakeWhereInput!]
+  id: StringFilter
+  name: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deletedAt: DateTimeNullableFilter
+  models: ModelListRelationFilter
+}
+
+input ModelListRelationFilter {
+  every: ModelWhereInput
+  some: ModelWhereInput
+  none: ModelWhereInput
+}
+
+input VehicleTypeRelationFilter {
+  is: VehicleTypeWhereInput
+  isNot: VehicleTypeWhereInput
+}
+
+input VehicleTypeWhereInput {
+  AND: [VehicleTypeWhereInput!]
+  OR: [VehicleTypeWhereInput!]
+  NOT: [VehicleTypeWhereInput!]
+  id: StringFilter
+  name: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  models: ModelListRelationFilter
+}
+
+input VehicleListRelationFilter {
+  every: VehicleWhereInput
+  some: VehicleWhereInput
+  none: VehicleWhereInput
+}
+
+input VehicleWhereInput {
+  AND: [VehicleWhereInput!]
+  OR: [VehicleWhereInput!]
+  NOT: [VehicleWhereInput!]
+  id: StringFilter
+  vin: StringFilter
+  modelId: StringFilter
+  seriesId: StringNullableFilter
+  year: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  unprocessed: VehicleUnprocessedCompositeFilter
+  model: ModelRelationFilter
+  series: SeriesNullableRelationFilter
+  lots: LotListRelationFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringNullableFilter
+  isSet: Boolean
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+  isSet: Boolean
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input VehicleUnprocessedCompositeFilter {
+  equals: VehicleUnprocessedObjectEqualityInput
+  is: VehicleUnprocessedWhereInput
+  isNot: VehicleUnprocessedWhereInput
+}
+
+input VehicleUnprocessedObjectEqualityInput {
+  name: String!
+  tag: String!
+}
+
+input VehicleUnprocessedWhereInput {
+  AND: [VehicleUnprocessedWhereInput!]
+  OR: [VehicleUnprocessedWhereInput!]
+  NOT: [VehicleUnprocessedWhereInput!]
+  name: StringFilter
+  tag: StringFilter
+}
+
+input ModelRelationFilter {
+  is: ModelWhereInput
+  isNot: ModelWhereInput
+}
+
+input SeriesNullableRelationFilter {
+  is: SeriesWhereInput
+  isNot: SeriesWhereInput
+}
+
+input SeriesWhereInput {
+  AND: [SeriesWhereInput!]
+  OR: [SeriesWhereInput!]
+  NOT: [SeriesWhereInput!]
+  id: StringFilter
+  modelId: StringFilter
+  name: StringFilter
+  minYear: IntFilter
+  maxYear: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  model: ModelRelationFilter
+  vehicles: VehicleListRelationFilter
+}
+
+input LotListRelationFilter {
+  every: LotWhereInput
+  some: LotWhereInput
+  none: LotWhereInput
+}
+
+input LotWhereInput {
+  AND: [LotWhereInput!]
+  OR: [LotWhereInput!]
+  NOT: [LotWhereInput!]
+  id: StringFilter
+  auction: EnumAuctionFilter
+  lotNumber: IntFilter
+  sellingBranch: StringFilter
+  saleLocation: StringFilter
+  location: StringFilter
+  auctionDateTime: DateTimeFilter
+  seller: StringFilter
+  preAccidentValue: StringFilter
+  actualCashValue: StringFilter
+  estimatedRepairCost: StringFilter
+  lastPreBid: FloatNullableFilter
+  finalBid: IntNullableFilter
+  saleStatus: StringFilter
+  titleType: StringFilter
+  titleBrand: StringFilter
+  titleNotes: StringFilter
+  primaryDamage: StringFilter
+  secondaryDamage: StringFilter
+  loss: StringFilter
+  startCode: StringFilter
+  highlights: StringFilter
+  key: StringFilter
+  odometer: IntFilter
+  engine: StringFilter
+  fuelType: StringFilter
+  transmission: StringFilter
+  drivelineType: StringFilter
+  interiorColor: StringFilter
+  exteriorColor: StringFilter
+  buyNowPrice: IntNullableFilter
+  bodyStyle: StringFilter
+  airbagsStatus: StringFilter
+  cylinders: IntNullableFilter
+  manufacturedIn: StringFilter
+  sourceLastUpdated: StringFilter
+  vehicleId: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  unprocessed: LotUnprocessedCompositeFilter
+  vehicle: VehicleRelationFilter
+}
+
+input EnumAuctionFilter {
+  equals: Auction
+  in: [Auction!]
+  notIn: [Auction!]
+  not: NestedEnumAuctionFilter
+}
+
+input NestedEnumAuctionFilter {
+  equals: Auction
+  in: [Auction!]
+  notIn: [Auction!]
+  not: NestedEnumAuctionFilter
+}
+
+input FloatNullableFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatNullableFilter
+  isSet: Boolean
+}
+
+input NestedFloatNullableFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatNullableFilter
+  isSet: Boolean
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+  isSet: Boolean
+}
+
+input NestedIntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+  isSet: Boolean
+}
+
+input LotUnprocessedCompositeFilter {
+  equals: LotUnprocessedObjectEqualityInput
+  is: LotUnprocessedWhereInput
+  isNot: LotUnprocessedWhereInput
+}
+
+input LotUnprocessedObjectEqualityInput {
+  leftTrans: String!
+  prebidClosedTrans: String!
+  buyNowCloseTime: DateTime
+  soldBefore: Int
+  status: Int!
+  imgs: [String!]
+}
+
+input LotUnprocessedWhereInput {
+  AND: [LotUnprocessedWhereInput!]
+  OR: [LotUnprocessedWhereInput!]
+  NOT: [LotUnprocessedWhereInput!]
+  leftTrans: StringFilter
+  prebidClosedTrans: StringFilter
+  buyNowCloseTime: DateTimeNullableFilter
+  soldBefore: IntNullableFilter
+  status: IntFilter
+  imgs: StringNullableListFilter
+}
+
+input StringNullableListFilter {
+  equals: [String!]
+  has: String
+  hasEvery: [String!]
+  hasSome: [String!]
+  isEmpty: Boolean
+}
+
+input VehicleRelationFilter {
+  is: VehicleWhereInput
+  isNot: VehicleWhereInput
+}
+
+input SeriesListRelationFilter {
+  every: SeriesWhereInput
+  some: SeriesWhereInput
+  none: SeriesWhereInput
+}
+
+input ModelOrderByWithRelationInput {
+  id: SortOrder
+  makeId: SortOrder
+  vehicleTypeId: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  make: MakeOrderByWithRelationInput
+  vehicleType: VehicleTypeOrderByWithRelationInput
+  vehicles: VehicleOrderByRelationAggregateInput
+  serieses: SeriesOrderByRelationAggregateInput
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input MakeOrderByWithRelationInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deletedAt: SortOrder
+  models: ModelOrderByRelationAggregateInput
+}
+
+input ModelOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input VehicleTypeOrderByWithRelationInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  models: ModelOrderByRelationAggregateInput
+}
+
+input VehicleOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input SeriesOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ModelWhereUniqueInput {
+  id: String
+  makeId_vehicleTypeId_name: ModelMakeIdVehicleTypeIdNameCompoundUniqueInput
+  AND: [ModelWhereInput!]
+  OR: [ModelWhereInput!]
+  NOT: [ModelWhereInput!]
+  makeId: StringFilter
+  vehicleTypeId: StringFilter
+  name: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  make: MakeRelationFilter
+  vehicleType: VehicleTypeRelationFilter
+  vehicles: VehicleListRelationFilter
+  serieses: SeriesListRelationFilter
+}
+
+input ModelMakeIdVehicleTypeIdNameCompoundUniqueInput {
+  makeId: String!
+  vehicleTypeId: String!
+  name: String!
+}
+
+enum ModelScalarFieldEnum {
+  id
+  makeId
+  vehicleTypeId
+  name
+  createdAt
+  updatedAt
+  deleted
+}
+
+type MakeCountAggregate {
+  id: Int!
+  name: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  deletedAt: Int!
+  _all: Int!
+}
+
+type MakeMaxAggregate {
+  id: String
+  name: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+}
+
+type MakeMinAggregate {
+  id: String
+  name: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+}
+
+type AggregateMake {
+  _count: MakeCountAggregate
+  _min: MakeMinAggregate
+  _max: MakeMaxAggregate
+}
+
+type MakeGroupBy {
+  id: String!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  _count: MakeCountAggregate
+  _min: MakeMinAggregate
+  _max: MakeMaxAggregate
+}
+
+type ModelCount {
+  vehicles: Int!
+  serieses: Int!
+}
+
+type Model {
+  id: String!
+  makeId: String!
+  vehicleTypeId: String!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: ModelCount
+  make: Make!
+  vehicleType: VehicleType!
+  vehicles(where: VehicleWhereInput, orderBy: [VehicleOrderByWithRelationInput!], cursor: VehicleWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleScalarFieldEnum!]): [Vehicle!]!
+  serieses(where: SeriesWhereInput, orderBy: [SeriesOrderByWithRelationInput!], cursor: SeriesWhereUniqueInput, take: Int, skip: Int, distinct: [SeriesScalarFieldEnum!]): [Series!]!
+}
+
+input VehicleOrderByWithRelationInput {
+  id: SortOrder
+  vin: SortOrder
+  modelId: SortOrder
+  seriesId: SortOrder
+  year: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  unprocessed: VehicleUnprocessedOrderByInput
+  model: ModelOrderByWithRelationInput
+  series: SeriesOrderByWithRelationInput
+  lots: LotOrderByRelationAggregateInput
+}
+
+input VehicleUnprocessedOrderByInput {
+  name: SortOrder
+  tag: SortOrder
+}
+
+input SeriesOrderByWithRelationInput {
+  id: SortOrder
+  modelId: SortOrder
+  name: SortOrder
+  minYear: SortOrder
+  maxYear: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  model: ModelOrderByWithRelationInput
+  vehicles: VehicleOrderByRelationAggregateInput
+}
+
+input LotOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input VehicleWhereUniqueInput {
+  id: String
+  vin: String
+  AND: [VehicleWhereInput!]
+  OR: [VehicleWhereInput!]
+  NOT: [VehicleWhereInput!]
+  modelId: StringFilter
+  seriesId: StringNullableFilter
+  year: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  unprocessed: VehicleUnprocessedCompositeFilter
+  model: ModelRelationFilter
+  series: SeriesNullableRelationFilter
+  lots: LotListRelationFilter
+}
+
+enum VehicleScalarFieldEnum {
+  id
+  vin
+  modelId
+  seriesId
+  year
+  createdAt
+  updatedAt
+  deleted
+}
+
+input SeriesWhereUniqueInput {
+  id: String
+  modelId_name: SeriesModelIdNameCompoundUniqueInput
+  AND: [SeriesWhereInput!]
+  OR: [SeriesWhereInput!]
+  NOT: [SeriesWhereInput!]
+  modelId: StringFilter
+  name: StringFilter
+  minYear: IntFilter
+  maxYear: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  model: ModelRelationFilter
+  vehicles: VehicleListRelationFilter
+}
+
+input SeriesModelIdNameCompoundUniqueInput {
+  modelId: String!
+  name: String!
+}
+
+enum SeriesScalarFieldEnum {
+  id
+  modelId
+  name
+  minYear
+  maxYear
+  createdAt
+  updatedAt
+  deleted
+}
+
+type ModelCountAggregate {
+  id: Int!
+  makeId: Int!
+  vehicleTypeId: Int!
+  name: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  deleted: Int!
+  _all: Int!
+}
+
+type ModelMaxAggregate {
+  id: String
+  makeId: String
+  vehicleTypeId: String
+  name: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type ModelMinAggregate {
+  id: String
+  makeId: String
+  vehicleTypeId: String
+  name: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type AggregateModel {
+  _count: ModelCountAggregate
+  _min: ModelMinAggregate
+  _max: ModelMaxAggregate
+}
+
+type ModelGroupBy {
+  id: String!
+  makeId: String!
+  vehicleTypeId: String!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: ModelCountAggregate
+  _min: ModelMinAggregate
+  _max: ModelMaxAggregate
+}
+
+type SeriesCount {
+  vehicles: Int!
+}
+
+type Series {
+  id: String!
+  modelId: String!
+  name: String!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: SeriesCount
+  model: Model!
+  vehicles(where: VehicleWhereInput, orderBy: [VehicleOrderByWithRelationInput!], cursor: VehicleWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleScalarFieldEnum!]): [Vehicle!]!
+}
+
+type SeriesAvgAggregate {
+  minYear: Float
+  maxYear: Float
+}
+
+type SeriesCountAggregate {
+  id: Int!
+  modelId: Int!
+  name: Int!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  deleted: Int!
+  _all: Int!
+}
+
+type SeriesMaxAggregate {
+  id: String
+  modelId: String
+  name: String
+  minYear: Int
+  maxYear: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type SeriesMinAggregate {
+  id: String
+  modelId: String
+  name: String
+  minYear: Int
+  maxYear: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type SeriesSumAggregate {
+  minYear: Int
+  maxYear: Int
+}
+
+type AggregateSeries {
+  _count: SeriesCountAggregate
+  _avg: SeriesAvgAggregate
+  _sum: SeriesSumAggregate
+  _min: SeriesMinAggregate
+  _max: SeriesMaxAggregate
+}
+
+type SeriesGroupBy {
+  id: String!
+  modelId: String!
+  name: String!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: SeriesCountAggregate
+  _avg: SeriesAvgAggregate
+  _sum: SeriesSumAggregate
+  _min: SeriesMinAggregate
+  _max: SeriesMaxAggregate
+}
+
+type LogRecord {
+  type: LogRecordType!
+  value: JSON!
+}
+
+enum LogRecordType {
+  info
+  error
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
+
+type ServerProcessMirrorCount {
+  subProcesses: Int!
+}
+
+type ServerProcessMirror {
+  id: String!
+  parentProcessId: String
+  type: ServerProcessType!
+  status: Status!
+  props: JSON!
+  state: JSON!
+  log: [LogRecord!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: ServerProcessMirrorCount
+  parentProcess(where: ServerProcessMirrorWhereInput): ServerProcessMirror
+  subProcesses(where: ServerProcessMirrorWhereInput, orderBy: [ServerProcessMirrorOrderByWithRelationInput!], cursor: ServerProcessMirrorWhereUniqueInput, take: Int, skip: Int, distinct: [ServerProcessMirrorScalarFieldEnum!]): [ServerProcessMirror!]!
+}
+
+enum ServerProcessType {
+  bidCarsSearchResultPageScraper
+  bidCarsSearch
+}
+
+enum Status {
+  idle
+  pending
+  aborted
+  failed
+  succeeded
+}
+
+input ServerProcessMirrorWhereInput {
+  AND: [ServerProcessMirrorWhereInput!]
+  OR: [ServerProcessMirrorWhereInput!]
+  NOT: [ServerProcessMirrorWhereInput!]
+  id: StringFilter
+  parentProcessId: StringNullableFilter
+  type: EnumServerProcessTypeFilter
+  status: EnumStatusFilter
+  props: JsonFilter
+  state: JsonFilter
+  log: [LogRecordObjectEqualityInput!]
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  parentProcess: ServerProcessMirrorNullableRelationFilter
+  subProcesses: ServerProcessMirrorListRelationFilter
+}
+
+input EnumServerProcessTypeFilter {
+  equals: ServerProcessType
+  in: [ServerProcessType!]
+  notIn: [ServerProcessType!]
+  not: NestedEnumServerProcessTypeFilter
+}
+
+input NestedEnumServerProcessTypeFilter {
+  equals: ServerProcessType
+  in: [ServerProcessType!]
+  notIn: [ServerProcessType!]
+  not: NestedEnumServerProcessTypeFilter
+}
+
+input EnumStatusFilter {
+  equals: Status
+  in: [Status!]
+  notIn: [Status!]
+  not: NestedEnumStatusFilter
+}
+
+input NestedEnumStatusFilter {
+  equals: Status
+  in: [Status!]
+  notIn: [Status!]
+  not: NestedEnumStatusFilter
+}
+
+input JsonFilter {
+  equals: JSON
+  not: JSON
+}
+
+input LogRecordObjectEqualityInput {
+  type: LogRecordType!
+  value: JSON!
+}
+
+input ServerProcessMirrorNullableRelationFilter {
+  is: ServerProcessMirrorWhereInput
+  isNot: ServerProcessMirrorWhereInput
+}
+
+input ServerProcessMirrorListRelationFilter {
+  every: ServerProcessMirrorWhereInput
+  some: ServerProcessMirrorWhereInput
+  none: ServerProcessMirrorWhereInput
+}
+
+input ServerProcessMirrorOrderByWithRelationInput {
+  id: SortOrder
+  parentProcessId: SortOrder
+  type: SortOrder
+  status: SortOrder
+  props: SortOrder
+  state: SortOrder
+  log: LogRecordOrderByCompositeAggregateInput
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  parentProcess: ServerProcessMirrorOrderByWithRelationInput
+  subProcesses: ServerProcessMirrorOrderByRelationAggregateInput
+}
+
+input LogRecordOrderByCompositeAggregateInput {
+  _count: SortOrder
+}
+
+input ServerProcessMirrorOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input ServerProcessMirrorWhereUniqueInput {
+  id: String
+  AND: [ServerProcessMirrorWhereInput!]
+  OR: [ServerProcessMirrorWhereInput!]
+  NOT: [ServerProcessMirrorWhereInput!]
+  parentProcessId: StringNullableFilter
+  type: EnumServerProcessTypeFilter
+  status: EnumStatusFilter
+  props: JsonFilter
+  state: JsonFilter
+  log: [LogRecordObjectEqualityInput!]
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  parentProcess: ServerProcessMirrorNullableRelationFilter
+  subProcesses: ServerProcessMirrorListRelationFilter
+}
+
+enum ServerProcessMirrorScalarFieldEnum {
+  id
+  parentProcessId
+  type
+  status
+  props
+  state
+  createdAt
+  updatedAt
+  deleted
+}
+
+type ServerProcessMirrorCountAggregate {
+  id: Int!
+  parentProcessId: Int!
+  type: Int!
+  status: Int!
+  props: Int!
+  state: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  deleted: Int!
+  _all: Int!
+}
+
+type ServerProcessMirrorMaxAggregate {
+  id: String
+  parentProcessId: String
+  type: ServerProcessType
+  status: Status
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type ServerProcessMirrorMinAggregate {
+  id: String
+  parentProcessId: String
+  type: ServerProcessType
+  status: Status
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type AggregateServerProcessMirror {
+  _count: ServerProcessMirrorCountAggregate
+  _min: ServerProcessMirrorMinAggregate
+  _max: ServerProcessMirrorMaxAggregate
+}
+
+type ServerProcessMirrorGroupBy {
+  id: String!
+  parentProcessId: String
+  type: ServerProcessType!
+  status: Status!
+  props: JSON!
+  state: JSON!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: ServerProcessMirrorCountAggregate
+  _min: ServerProcessMirrorMinAggregate
+  _max: ServerProcessMirrorMaxAggregate
+}
+
+type VehicleUnprocessed {
+  name: String!
+  tag: String!
+}
+
+type VehicleCount {
+  lots: Int!
+}
+
+type Vehicle {
+  id: String!
+  vin: String!
+  modelId: String!
+  seriesId: String
+  year: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  unprocessed: VehicleUnprocessed!
+  _count: VehicleCount
+  model: Model!
+  series(where: SeriesWhereInput): Series
+  lots(where: LotWhereInput, orderBy: [LotOrderByWithRelationInput!], cursor: LotWhereUniqueInput, take: Int, skip: Int, distinct: [LotScalarFieldEnum!]): [Lot!]!
+}
+
+input LotOrderByWithRelationInput {
+  id: SortOrder
+  auction: SortOrder
+  lotNumber: SortOrder
+  sellingBranch: SortOrder
+  saleLocation: SortOrder
+  location: SortOrder
+  auctionDateTime: SortOrder
+  seller: SortOrder
+  preAccidentValue: SortOrder
+  actualCashValue: SortOrder
+  estimatedRepairCost: SortOrder
+  lastPreBid: SortOrder
+  finalBid: SortOrder
+  saleStatus: SortOrder
+  titleType: SortOrder
+  titleBrand: SortOrder
+  titleNotes: SortOrder
+  primaryDamage: SortOrder
+  secondaryDamage: SortOrder
+  loss: SortOrder
+  startCode: SortOrder
+  highlights: SortOrder
+  key: SortOrder
+  odometer: SortOrder
+  engine: SortOrder
+  fuelType: SortOrder
+  transmission: SortOrder
+  drivelineType: SortOrder
+  interiorColor: SortOrder
+  exteriorColor: SortOrder
+  buyNowPrice: SortOrder
+  bodyStyle: SortOrder
+  airbagsStatus: SortOrder
+  cylinders: SortOrder
+  manufacturedIn: SortOrder
+  sourceLastUpdated: SortOrder
+  vehicleId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  unprocessed: LotUnprocessedOrderByInput
+  vehicle: VehicleOrderByWithRelationInput
+}
+
+input LotUnprocessedOrderByInput {
+  leftTrans: SortOrder
+  prebidClosedTrans: SortOrder
+  buyNowCloseTime: SortOrder
+  soldBefore: SortOrder
+  status: SortOrder
+  imgs: SortOrder
+}
+
+input LotWhereUniqueInput {
+  id: String
+  auction_lotNumber: LotAuctionLotNumberCompoundUniqueInput
+  AND: [LotWhereInput!]
+  OR: [LotWhereInput!]
+  NOT: [LotWhereInput!]
+  auction: EnumAuctionFilter
+  lotNumber: IntFilter
+  sellingBranch: StringFilter
+  saleLocation: StringFilter
+  location: StringFilter
+  auctionDateTime: DateTimeFilter
+  seller: StringFilter
+  preAccidentValue: StringFilter
+  actualCashValue: StringFilter
+  estimatedRepairCost: StringFilter
+  lastPreBid: FloatNullableFilter
+  finalBid: IntNullableFilter
+  saleStatus: StringFilter
+  titleType: StringFilter
+  titleBrand: StringFilter
+  titleNotes: StringFilter
+  primaryDamage: StringFilter
+  secondaryDamage: StringFilter
+  loss: StringFilter
+  startCode: StringFilter
+  highlights: StringFilter
+  key: StringFilter
+  odometer: IntFilter
+  engine: StringFilter
+  fuelType: StringFilter
+  transmission: StringFilter
+  drivelineType: StringFilter
+  interiorColor: StringFilter
+  exteriorColor: StringFilter
+  buyNowPrice: IntNullableFilter
+  bodyStyle: StringFilter
+  airbagsStatus: StringFilter
+  cylinders: IntNullableFilter
+  manufacturedIn: StringFilter
+  sourceLastUpdated: StringFilter
+  vehicleId: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  unprocessed: LotUnprocessedCompositeFilter
+  vehicle: VehicleRelationFilter
+}
+
+input LotAuctionLotNumberCompoundUniqueInput {
+  auction: Auction!
+  lotNumber: Int!
+}
+
+enum LotScalarFieldEnum {
+  id
+  auction
+  lotNumber
+  sellingBranch
+  saleLocation
+  location
+  auctionDateTime
+  seller
+  preAccidentValue
+  actualCashValue
+  estimatedRepairCost
+  lastPreBid
+  finalBid
+  saleStatus
+  titleType
+  titleBrand
+  titleNotes
+  primaryDamage
+  secondaryDamage
+  loss
+  startCode
+  highlights
+  key
+  odometer
+  engine
+  fuelType
+  transmission
+  drivelineType
+  interiorColor
+  exteriorColor
+  buyNowPrice
+  bodyStyle
+  airbagsStatus
+  cylinders
+  manufacturedIn
+  sourceLastUpdated
+  vehicleId
+  createdAt
+  updatedAt
+  deleted
+}
+
+type VehicleAvgAggregate {
+  year: Float
+}
+
+type VehicleCountAggregate {
+  id: Int!
+  vin: Int!
+  modelId: Int!
+  seriesId: Int!
+  year: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  deleted: Int!
+  _all: Int!
+}
+
+type VehicleMaxAggregate {
+  id: String
+  vin: String
+  modelId: String
+  seriesId: String
+  year: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type VehicleMinAggregate {
+  id: String
+  vin: String
+  modelId: String
+  seriesId: String
+  year: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type VehicleSumAggregate {
+  year: Int
+}
+
+type AggregateVehicle {
+  _count: VehicleCountAggregate
+  _avg: VehicleAvgAggregate
+  _sum: VehicleSumAggregate
+  _min: VehicleMinAggregate
+  _max: VehicleMaxAggregate
+}
+
+type VehicleGroupBy {
+  id: String!
+  vin: String!
+  modelId: String!
+  seriesId: String
+  year: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: VehicleCountAggregate
+  _avg: VehicleAvgAggregate
+  _sum: VehicleSumAggregate
+  _min: VehicleMinAggregate
+  _max: VehicleMaxAggregate
+}
+
+type VehicleTypeCount {
+  models: Int!
+}
+
+type VehicleType {
+  id: String!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: VehicleTypeCount
+  models(where: ModelWhereInput, orderBy: [ModelOrderByWithRelationInput!], cursor: ModelWhereUniqueInput, take: Int, skip: Int, distinct: [ModelScalarFieldEnum!]): [Model!]!
+}
+
+type VehicleTypeCountAggregate {
+  id: Int!
+  name: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  deleted: Int!
+  _all: Int!
+}
+
+type VehicleTypeMaxAggregate {
+  id: String
+  name: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type VehicleTypeMinAggregate {
+  id: String
+  name: String
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+type AggregateVehicleType {
+  _count: VehicleTypeCountAggregate
+  _min: VehicleTypeMinAggregate
+  _max: VehicleTypeMaxAggregate
+}
+
+type VehicleTypeGroupBy {
+  id: String!
+  name: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deleted: DateTime
+  _count: VehicleTypeCountAggregate
+  _min: VehicleTypeMinAggregate
+  _max: VehicleTypeMaxAggregate
+}
+
+type Query {
+  aggregateLot(where: LotWhereInput, orderBy: [LotOrderByWithRelationInput!], cursor: LotWhereUniqueInput, take: Int, skip: Int): AggregateLot!
+  findFirstLot(where: LotWhereInput, orderBy: [LotOrderByWithRelationInput!], cursor: LotWhereUniqueInput, take: Int, skip: Int, distinct: [LotScalarFieldEnum!]): Lot
+  findFirstLotOrThrow(where: LotWhereInput, orderBy: [LotOrderByWithRelationInput!], cursor: LotWhereUniqueInput, take: Int, skip: Int, distinct: [LotScalarFieldEnum!]): Lot
+  lots(where: LotWhereInput, orderBy: [LotOrderByWithRelationInput!], cursor: LotWhereUniqueInput, take: Int, skip: Int, distinct: [LotScalarFieldEnum!]): [Lot!]!
+  lot(where: LotWhereUniqueInput!): Lot
+  getLot(where: LotWhereUniqueInput!): Lot
+  groupByLot(where: LotWhereInput, orderBy: [LotOrderByWithAggregationInput!], by: [LotScalarFieldEnum!]!, having: LotScalarWhereWithAggregatesInput, take: Int, skip: Int): [LotGroupBy!]!
+  aggregateMake(where: MakeWhereInput, orderBy: [MakeOrderByWithRelationInput!], cursor: MakeWhereUniqueInput, take: Int, skip: Int): AggregateMake!
+  findFirstMake(where: MakeWhereInput, orderBy: [MakeOrderByWithRelationInput!], cursor: MakeWhereUniqueInput, take: Int, skip: Int, distinct: [MakeScalarFieldEnum!]): Make
+  findFirstMakeOrThrow(where: MakeWhereInput, orderBy: [MakeOrderByWithRelationInput!], cursor: MakeWhereUniqueInput, take: Int, skip: Int, distinct: [MakeScalarFieldEnum!]): Make
+  makes(where: MakeWhereInput, orderBy: [MakeOrderByWithRelationInput!], cursor: MakeWhereUniqueInput, take: Int, skip: Int, distinct: [MakeScalarFieldEnum!]): [Make!]!
+  make(where: MakeWhereUniqueInput!): Make
+  getMake(where: MakeWhereUniqueInput!): Make
+  groupByMake(where: MakeWhereInput, orderBy: [MakeOrderByWithAggregationInput!], by: [MakeScalarFieldEnum!]!, having: MakeScalarWhereWithAggregatesInput, take: Int, skip: Int): [MakeGroupBy!]!
+  aggregateModel(where: ModelWhereInput, orderBy: [ModelOrderByWithRelationInput!], cursor: ModelWhereUniqueInput, take: Int, skip: Int): AggregateModel!
+  findFirstModel(where: ModelWhereInput, orderBy: [ModelOrderByWithRelationInput!], cursor: ModelWhereUniqueInput, take: Int, skip: Int, distinct: [ModelScalarFieldEnum!]): Model
+  findFirstModelOrThrow(where: ModelWhereInput, orderBy: [ModelOrderByWithRelationInput!], cursor: ModelWhereUniqueInput, take: Int, skip: Int, distinct: [ModelScalarFieldEnum!]): Model
+  models(where: ModelWhereInput, orderBy: [ModelOrderByWithRelationInput!], cursor: ModelWhereUniqueInput, take: Int, skip: Int, distinct: [ModelScalarFieldEnum!]): [Model!]!
+  model(where: ModelWhereUniqueInput!): Model
+  getModel(where: ModelWhereUniqueInput!): Model
+  groupByModel(where: ModelWhereInput, orderBy: [ModelOrderByWithAggregationInput!], by: [ModelScalarFieldEnum!]!, having: ModelScalarWhereWithAggregatesInput, take: Int, skip: Int): [ModelGroupBy!]!
+  aggregateSeries(where: SeriesWhereInput, orderBy: [SeriesOrderByWithRelationInput!], cursor: SeriesWhereUniqueInput, take: Int, skip: Int): AggregateSeries!
+  findFirstSeries(where: SeriesWhereInput, orderBy: [SeriesOrderByWithRelationInput!], cursor: SeriesWhereUniqueInput, take: Int, skip: Int, distinct: [SeriesScalarFieldEnum!]): Series
+  findFirstSeriesOrThrow(where: SeriesWhereInput, orderBy: [SeriesOrderByWithRelationInput!], cursor: SeriesWhereUniqueInput, take: Int, skip: Int, distinct: [SeriesScalarFieldEnum!]): Series
+  findManySeries(where: SeriesWhereInput, orderBy: [SeriesOrderByWithRelationInput!], cursor: SeriesWhereUniqueInput, take: Int, skip: Int, distinct: [SeriesScalarFieldEnum!]): [Series!]!
+  findUniqueSeries(where: SeriesWhereUniqueInput!): Series
+  findUniqueSeriesOrThrow(where: SeriesWhereUniqueInput!): Series
+  groupBySeries(where: SeriesWhereInput, orderBy: [SeriesOrderByWithAggregationInput!], by: [SeriesScalarFieldEnum!]!, having: SeriesScalarWhereWithAggregatesInput, take: Int, skip: Int): [SeriesGroupBy!]!
+  aggregateServerProcessMirror(where: ServerProcessMirrorWhereInput, orderBy: [ServerProcessMirrorOrderByWithRelationInput!], cursor: ServerProcessMirrorWhereUniqueInput, take: Int, skip: Int): AggregateServerProcessMirror!
+  findFirstServerProcessMirror(where: ServerProcessMirrorWhereInput, orderBy: [ServerProcessMirrorOrderByWithRelationInput!], cursor: ServerProcessMirrorWhereUniqueInput, take: Int, skip: Int, distinct: [ServerProcessMirrorScalarFieldEnum!]): ServerProcessMirror
+  findFirstServerProcessMirrorOrThrow(where: ServerProcessMirrorWhereInput, orderBy: [ServerProcessMirrorOrderByWithRelationInput!], cursor: ServerProcessMirrorWhereUniqueInput, take: Int, skip: Int, distinct: [ServerProcessMirrorScalarFieldEnum!]): ServerProcessMirror
+  serverProcessMirrors(where: ServerProcessMirrorWhereInput, orderBy: [ServerProcessMirrorOrderByWithRelationInput!], cursor: ServerProcessMirrorWhereUniqueInput, take: Int, skip: Int, distinct: [ServerProcessMirrorScalarFieldEnum!]): [ServerProcessMirror!]!
+  serverProcessMirror(where: ServerProcessMirrorWhereUniqueInput!): ServerProcessMirror
+  getServerProcessMirror(where: ServerProcessMirrorWhereUniqueInput!): ServerProcessMirror
+  groupByServerProcessMirror(where: ServerProcessMirrorWhereInput, orderBy: [ServerProcessMirrorOrderByWithAggregationInput!], by: [ServerProcessMirrorScalarFieldEnum!]!, having: ServerProcessMirrorScalarWhereWithAggregatesInput, take: Int, skip: Int): [ServerProcessMirrorGroupBy!]!
+  aggregateVehicle(where: VehicleWhereInput, orderBy: [VehicleOrderByWithRelationInput!], cursor: VehicleWhereUniqueInput, take: Int, skip: Int): AggregateVehicle!
+  findFirstVehicle(where: VehicleWhereInput, orderBy: [VehicleOrderByWithRelationInput!], cursor: VehicleWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleScalarFieldEnum!]): Vehicle
+  findFirstVehicleOrThrow(where: VehicleWhereInput, orderBy: [VehicleOrderByWithRelationInput!], cursor: VehicleWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleScalarFieldEnum!]): Vehicle
+  vehicles(where: VehicleWhereInput, orderBy: [VehicleOrderByWithRelationInput!], cursor: VehicleWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleScalarFieldEnum!]): [Vehicle!]!
+  vehicle(where: VehicleWhereUniqueInput!): Vehicle
+  getVehicle(where: VehicleWhereUniqueInput!): Vehicle
+  groupByVehicle(where: VehicleWhereInput, orderBy: [VehicleOrderByWithAggregationInput!], by: [VehicleScalarFieldEnum!]!, having: VehicleScalarWhereWithAggregatesInput, take: Int, skip: Int): [VehicleGroupBy!]!
+  aggregateVehicleType(where: VehicleTypeWhereInput, orderBy: [VehicleTypeOrderByWithRelationInput!], cursor: VehicleTypeWhereUniqueInput, take: Int, skip: Int): AggregateVehicleType!
+  findFirstVehicleType(where: VehicleTypeWhereInput, orderBy: [VehicleTypeOrderByWithRelationInput!], cursor: VehicleTypeWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleTypeScalarFieldEnum!]): VehicleType
+  findFirstVehicleTypeOrThrow(where: VehicleTypeWhereInput, orderBy: [VehicleTypeOrderByWithRelationInput!], cursor: VehicleTypeWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleTypeScalarFieldEnum!]): VehicleType
+  vehicleTypes(where: VehicleTypeWhereInput, orderBy: [VehicleTypeOrderByWithRelationInput!], cursor: VehicleTypeWhereUniqueInput, take: Int, skip: Int, distinct: [VehicleTypeScalarFieldEnum!]): [VehicleType!]!
+  vehicleType(where: VehicleTypeWhereUniqueInput!): VehicleType
+  getVehicleType(where: VehicleTypeWhereUniqueInput!): VehicleType
+  groupByVehicleType(where: VehicleTypeWhereInput, orderBy: [VehicleTypeOrderByWithAggregationInput!], by: [VehicleTypeScalarFieldEnum!]!, having: VehicleTypeScalarWhereWithAggregatesInput, take: Int, skip: Int): [VehicleTypeGroupBy!]!
+}
+
+input LotOrderByWithAggregationInput {
+  id: SortOrder
+  auction: SortOrder
+  lotNumber: SortOrder
+  sellingBranch: SortOrder
+  saleLocation: SortOrder
+  location: SortOrder
+  auctionDateTime: SortOrder
+  seller: SortOrder
+  preAccidentValue: SortOrder
+  actualCashValue: SortOrder
+  estimatedRepairCost: SortOrder
+  lastPreBid: SortOrder
+  finalBid: SortOrder
+  saleStatus: SortOrder
+  titleType: SortOrder
+  titleBrand: SortOrder
+  titleNotes: SortOrder
+  primaryDamage: SortOrder
+  secondaryDamage: SortOrder
+  loss: SortOrder
+  startCode: SortOrder
+  highlights: SortOrder
+  key: SortOrder
+  odometer: SortOrder
+  engine: SortOrder
+  fuelType: SortOrder
+  transmission: SortOrder
+  drivelineType: SortOrder
+  interiorColor: SortOrder
+  exteriorColor: SortOrder
+  buyNowPrice: SortOrder
+  bodyStyle: SortOrder
+  airbagsStatus: SortOrder
+  cylinders: SortOrder
+  manufacturedIn: SortOrder
+  sourceLastUpdated: SortOrder
+  vehicleId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  _count: LotCountOrderByAggregateInput
+  _avg: LotAvgOrderByAggregateInput
+  _max: LotMaxOrderByAggregateInput
+  _min: LotMinOrderByAggregateInput
+  _sum: LotSumOrderByAggregateInput
+}
+
+input LotCountOrderByAggregateInput {
+  id: SortOrder
+  auction: SortOrder
+  lotNumber: SortOrder
+  sellingBranch: SortOrder
+  saleLocation: SortOrder
+  location: SortOrder
+  auctionDateTime: SortOrder
+  seller: SortOrder
+  preAccidentValue: SortOrder
+  actualCashValue: SortOrder
+  estimatedRepairCost: SortOrder
+  lastPreBid: SortOrder
+  finalBid: SortOrder
+  saleStatus: SortOrder
+  titleType: SortOrder
+  titleBrand: SortOrder
+  titleNotes: SortOrder
+  primaryDamage: SortOrder
+  secondaryDamage: SortOrder
+  loss: SortOrder
+  startCode: SortOrder
+  highlights: SortOrder
+  key: SortOrder
+  odometer: SortOrder
+  engine: SortOrder
+  fuelType: SortOrder
+  transmission: SortOrder
+  drivelineType: SortOrder
+  interiorColor: SortOrder
+  exteriorColor: SortOrder
+  buyNowPrice: SortOrder
+  bodyStyle: SortOrder
+  airbagsStatus: SortOrder
+  cylinders: SortOrder
+  manufacturedIn: SortOrder
+  sourceLastUpdated: SortOrder
+  vehicleId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input LotAvgOrderByAggregateInput {
+  lotNumber: SortOrder
+  lastPreBid: SortOrder
+  finalBid: SortOrder
+  odometer: SortOrder
+  buyNowPrice: SortOrder
+  cylinders: SortOrder
+}
+
+input LotMaxOrderByAggregateInput {
+  id: SortOrder
+  auction: SortOrder
+  lotNumber: SortOrder
+  sellingBranch: SortOrder
+  saleLocation: SortOrder
+  location: SortOrder
+  auctionDateTime: SortOrder
+  seller: SortOrder
+  preAccidentValue: SortOrder
+  actualCashValue: SortOrder
+  estimatedRepairCost: SortOrder
+  lastPreBid: SortOrder
+  finalBid: SortOrder
+  saleStatus: SortOrder
+  titleType: SortOrder
+  titleBrand: SortOrder
+  titleNotes: SortOrder
+  primaryDamage: SortOrder
+  secondaryDamage: SortOrder
+  loss: SortOrder
+  startCode: SortOrder
+  highlights: SortOrder
+  key: SortOrder
+  odometer: SortOrder
+  engine: SortOrder
+  fuelType: SortOrder
+  transmission: SortOrder
+  drivelineType: SortOrder
+  interiorColor: SortOrder
+  exteriorColor: SortOrder
+  buyNowPrice: SortOrder
+  bodyStyle: SortOrder
+  airbagsStatus: SortOrder
+  cylinders: SortOrder
+  manufacturedIn: SortOrder
+  sourceLastUpdated: SortOrder
+  vehicleId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input LotMinOrderByAggregateInput {
+  id: SortOrder
+  auction: SortOrder
+  lotNumber: SortOrder
+  sellingBranch: SortOrder
+  saleLocation: SortOrder
+  location: SortOrder
+  auctionDateTime: SortOrder
+  seller: SortOrder
+  preAccidentValue: SortOrder
+  actualCashValue: SortOrder
+  estimatedRepairCost: SortOrder
+  lastPreBid: SortOrder
+  finalBid: SortOrder
+  saleStatus: SortOrder
+  titleType: SortOrder
+  titleBrand: SortOrder
+  titleNotes: SortOrder
+  primaryDamage: SortOrder
+  secondaryDamage: SortOrder
+  loss: SortOrder
+  startCode: SortOrder
+  highlights: SortOrder
+  key: SortOrder
+  odometer: SortOrder
+  engine: SortOrder
+  fuelType: SortOrder
+  transmission: SortOrder
+  drivelineType: SortOrder
+  interiorColor: SortOrder
+  exteriorColor: SortOrder
+  buyNowPrice: SortOrder
+  bodyStyle: SortOrder
+  airbagsStatus: SortOrder
+  cylinders: SortOrder
+  manufacturedIn: SortOrder
+  sourceLastUpdated: SortOrder
+  vehicleId: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input LotSumOrderByAggregateInput {
+  lotNumber: SortOrder
+  lastPreBid: SortOrder
+  finalBid: SortOrder
+  odometer: SortOrder
+  buyNowPrice: SortOrder
+  cylinders: SortOrder
+}
+
+input LotScalarWhereWithAggregatesInput {
+  AND: [LotScalarWhereWithAggregatesInput!]
+  OR: [LotScalarWhereWithAggregatesInput!]
+  NOT: [LotScalarWhereWithAggregatesInput!]
+  id: StringWithAggregatesFilter
+  auction: EnumAuctionWithAggregatesFilter
+  lotNumber: IntWithAggregatesFilter
+  sellingBranch: StringWithAggregatesFilter
+  saleLocation: StringWithAggregatesFilter
+  location: StringWithAggregatesFilter
+  auctionDateTime: DateTimeWithAggregatesFilter
+  seller: StringWithAggregatesFilter
+  preAccidentValue: StringWithAggregatesFilter
+  actualCashValue: StringWithAggregatesFilter
+  estimatedRepairCost: StringWithAggregatesFilter
+  lastPreBid: FloatNullableWithAggregatesFilter
+  finalBid: IntNullableWithAggregatesFilter
+  saleStatus: StringWithAggregatesFilter
+  titleType: StringWithAggregatesFilter
+  titleBrand: StringWithAggregatesFilter
+  titleNotes: StringWithAggregatesFilter
+  primaryDamage: StringWithAggregatesFilter
+  secondaryDamage: StringWithAggregatesFilter
+  loss: StringWithAggregatesFilter
+  startCode: StringWithAggregatesFilter
+  highlights: StringWithAggregatesFilter
+  key: StringWithAggregatesFilter
+  odometer: IntWithAggregatesFilter
+  engine: StringWithAggregatesFilter
+  fuelType: StringWithAggregatesFilter
+  transmission: StringWithAggregatesFilter
+  drivelineType: StringWithAggregatesFilter
+  interiorColor: StringWithAggregatesFilter
+  exteriorColor: StringWithAggregatesFilter
+  buyNowPrice: IntNullableWithAggregatesFilter
+  bodyStyle: StringWithAggregatesFilter
+  airbagsStatus: StringWithAggregatesFilter
+  cylinders: IntNullableWithAggregatesFilter
+  manufacturedIn: StringWithAggregatesFilter
+  sourceLastUpdated: StringWithAggregatesFilter
+  vehicleId: StringWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  deleted: DateTimeNullableWithAggregatesFilter
+}
+
+input StringWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+input NestedStringWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+input EnumAuctionWithAggregatesFilter {
+  equals: Auction
+  in: [Auction!]
+  notIn: [Auction!]
+  not: NestedEnumAuctionWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumAuctionFilter
+  _max: NestedEnumAuctionFilter
+}
+
+input NestedEnumAuctionWithAggregatesFilter {
+  equals: Auction
+  in: [Auction!]
+  notIn: [Auction!]
+  not: NestedEnumAuctionWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumAuctionFilter
+  _max: NestedEnumAuctionFilter
+}
+
+input IntWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+input NestedIntWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+input NestedFloatFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatFilter
+}
+
+input DateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+input NestedDateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+input FloatNullableWithAggregatesFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedFloatNullableFilter
+  _min: NestedFloatNullableFilter
+  _max: NestedFloatNullableFilter
+  isSet: Boolean
+}
+
+input NestedFloatNullableWithAggregatesFilter {
+  equals: Float
+  in: [Float!]
+  notIn: [Float!]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedFloatNullableFilter
+  _min: NestedFloatNullableFilter
+  _max: NestedFloatNullableFilter
+  isSet: Boolean
+}
+
+input IntNullableWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedIntNullableFilter
+  _min: NestedIntNullableFilter
+  _max: NestedIntNullableFilter
+  isSet: Boolean
+}
+
+input NestedIntNullableWithAggregatesFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _avg: NestedFloatNullableFilter
+  _sum: NestedIntNullableFilter
+  _min: NestedIntNullableFilter
+  _max: NestedIntNullableFilter
+  isSet: Boolean
+}
+
+input DateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedDateTimeNullableFilter
+  _max: NestedDateTimeNullableFilter
+  isSet: Boolean
+}
+
+input NestedDateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedDateTimeNullableFilter
+  _max: NestedDateTimeNullableFilter
+  isSet: Boolean
+}
+
+input MakeWhereUniqueInput {
+  id: String
+  name: String
+  AND: [MakeWhereInput!]
+  OR: [MakeWhereInput!]
+  NOT: [MakeWhereInput!]
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deletedAt: DateTimeNullableFilter
+  models: ModelListRelationFilter
+}
+
+enum MakeScalarFieldEnum {
+  id
+  name
+  createdAt
+  updatedAt
+  deletedAt
+}
+
+input MakeOrderByWithAggregationInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deletedAt: SortOrder
+  _count: MakeCountOrderByAggregateInput
+  _max: MakeMaxOrderByAggregateInput
+  _min: MakeMinOrderByAggregateInput
+}
+
+input MakeCountOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deletedAt: SortOrder
+}
+
+input MakeMaxOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deletedAt: SortOrder
+}
+
+input MakeMinOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deletedAt: SortOrder
+}
+
+input MakeScalarWhereWithAggregatesInput {
+  AND: [MakeScalarWhereWithAggregatesInput!]
+  OR: [MakeScalarWhereWithAggregatesInput!]
+  NOT: [MakeScalarWhereWithAggregatesInput!]
+  id: StringWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  deletedAt: DateTimeNullableWithAggregatesFilter
+}
+
+input ModelOrderByWithAggregationInput {
+  id: SortOrder
+  makeId: SortOrder
+  vehicleTypeId: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  _count: ModelCountOrderByAggregateInput
+  _max: ModelMaxOrderByAggregateInput
+  _min: ModelMinOrderByAggregateInput
+}
+
+input ModelCountOrderByAggregateInput {
+  id: SortOrder
+  makeId: SortOrder
+  vehicleTypeId: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input ModelMaxOrderByAggregateInput {
+  id: SortOrder
+  makeId: SortOrder
+  vehicleTypeId: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input ModelMinOrderByAggregateInput {
+  id: SortOrder
+  makeId: SortOrder
+  vehicleTypeId: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input ModelScalarWhereWithAggregatesInput {
+  AND: [ModelScalarWhereWithAggregatesInput!]
+  OR: [ModelScalarWhereWithAggregatesInput!]
+  NOT: [ModelScalarWhereWithAggregatesInput!]
+  id: StringWithAggregatesFilter
+  makeId: StringWithAggregatesFilter
+  vehicleTypeId: StringWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  deleted: DateTimeNullableWithAggregatesFilter
+}
+
+input SeriesOrderByWithAggregationInput {
+  id: SortOrder
+  modelId: SortOrder
+  name: SortOrder
+  minYear: SortOrder
+  maxYear: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  _count: SeriesCountOrderByAggregateInput
+  _avg: SeriesAvgOrderByAggregateInput
+  _max: SeriesMaxOrderByAggregateInput
+  _min: SeriesMinOrderByAggregateInput
+  _sum: SeriesSumOrderByAggregateInput
+}
+
+input SeriesCountOrderByAggregateInput {
+  id: SortOrder
+  modelId: SortOrder
+  name: SortOrder
+  minYear: SortOrder
+  maxYear: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input SeriesAvgOrderByAggregateInput {
+  minYear: SortOrder
+  maxYear: SortOrder
+}
+
+input SeriesMaxOrderByAggregateInput {
+  id: SortOrder
+  modelId: SortOrder
+  name: SortOrder
+  minYear: SortOrder
+  maxYear: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input SeriesMinOrderByAggregateInput {
+  id: SortOrder
+  modelId: SortOrder
+  name: SortOrder
+  minYear: SortOrder
+  maxYear: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input SeriesSumOrderByAggregateInput {
+  minYear: SortOrder
+  maxYear: SortOrder
+}
+
+input SeriesScalarWhereWithAggregatesInput {
+  AND: [SeriesScalarWhereWithAggregatesInput!]
+  OR: [SeriesScalarWhereWithAggregatesInput!]
+  NOT: [SeriesScalarWhereWithAggregatesInput!]
+  id: StringWithAggregatesFilter
+  modelId: StringWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  minYear: IntWithAggregatesFilter
+  maxYear: IntWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  deleted: DateTimeNullableWithAggregatesFilter
+}
+
+input ServerProcessMirrorOrderByWithAggregationInput {
+  id: SortOrder
+  parentProcessId: SortOrder
+  type: SortOrder
+  status: SortOrder
+  props: SortOrder
+  state: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  _count: ServerProcessMirrorCountOrderByAggregateInput
+  _max: ServerProcessMirrorMaxOrderByAggregateInput
+  _min: ServerProcessMirrorMinOrderByAggregateInput
+}
+
+input ServerProcessMirrorCountOrderByAggregateInput {
+  id: SortOrder
+  parentProcessId: SortOrder
+  type: SortOrder
+  status: SortOrder
+  props: SortOrder
+  state: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input ServerProcessMirrorMaxOrderByAggregateInput {
+  id: SortOrder
+  parentProcessId: SortOrder
+  type: SortOrder
+  status: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input ServerProcessMirrorMinOrderByAggregateInput {
+  id: SortOrder
+  parentProcessId: SortOrder
+  type: SortOrder
+  status: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input ServerProcessMirrorScalarWhereWithAggregatesInput {
+  AND: [ServerProcessMirrorScalarWhereWithAggregatesInput!]
+  OR: [ServerProcessMirrorScalarWhereWithAggregatesInput!]
+  NOT: [ServerProcessMirrorScalarWhereWithAggregatesInput!]
+  id: StringWithAggregatesFilter
+  parentProcessId: StringNullableWithAggregatesFilter
+  type: EnumServerProcessTypeWithAggregatesFilter
+  status: EnumStatusWithAggregatesFilter
+  props: JsonWithAggregatesFilter
+  state: JsonWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  deleted: DateTimeNullableWithAggregatesFilter
+}
+
+input StringNullableWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+  isSet: Boolean
+}
+
+input NestedStringNullableWithAggregatesFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+  isSet: Boolean
+}
+
+input EnumServerProcessTypeWithAggregatesFilter {
+  equals: ServerProcessType
+  in: [ServerProcessType!]
+  notIn: [ServerProcessType!]
+  not: NestedEnumServerProcessTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumServerProcessTypeFilter
+  _max: NestedEnumServerProcessTypeFilter
+}
+
+input NestedEnumServerProcessTypeWithAggregatesFilter {
+  equals: ServerProcessType
+  in: [ServerProcessType!]
+  notIn: [ServerProcessType!]
+  not: NestedEnumServerProcessTypeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumServerProcessTypeFilter
+  _max: NestedEnumServerProcessTypeFilter
+}
+
+input EnumStatusWithAggregatesFilter {
+  equals: Status
+  in: [Status!]
+  notIn: [Status!]
+  not: NestedEnumStatusWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumStatusFilter
+  _max: NestedEnumStatusFilter
+}
+
+input NestedEnumStatusWithAggregatesFilter {
+  equals: Status
+  in: [Status!]
+  notIn: [Status!]
+  not: NestedEnumStatusWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedEnumStatusFilter
+  _max: NestedEnumStatusFilter
+}
+
+input JsonWithAggregatesFilter {
+  equals: JSON
+  not: JSON
+  _count: NestedIntFilter
+  _min: NestedJsonFilter
+  _max: NestedJsonFilter
+}
+
+input NestedJsonFilter {
+  equals: JSON
+  not: JSON
+}
+
+input VehicleOrderByWithAggregationInput {
+  id: SortOrder
+  vin: SortOrder
+  modelId: SortOrder
+  seriesId: SortOrder
+  year: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  _count: VehicleCountOrderByAggregateInput
+  _avg: VehicleAvgOrderByAggregateInput
+  _max: VehicleMaxOrderByAggregateInput
+  _min: VehicleMinOrderByAggregateInput
+  _sum: VehicleSumOrderByAggregateInput
+}
+
+input VehicleCountOrderByAggregateInput {
+  id: SortOrder
+  vin: SortOrder
+  modelId: SortOrder
+  seriesId: SortOrder
+  year: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input VehicleAvgOrderByAggregateInput {
+  year: SortOrder
+}
+
+input VehicleMaxOrderByAggregateInput {
+  id: SortOrder
+  vin: SortOrder
+  modelId: SortOrder
+  seriesId: SortOrder
+  year: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input VehicleMinOrderByAggregateInput {
+  id: SortOrder
+  vin: SortOrder
+  modelId: SortOrder
+  seriesId: SortOrder
+  year: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input VehicleSumOrderByAggregateInput {
+  year: SortOrder
+}
+
+input VehicleScalarWhereWithAggregatesInput {
+  AND: [VehicleScalarWhereWithAggregatesInput!]
+  OR: [VehicleScalarWhereWithAggregatesInput!]
+  NOT: [VehicleScalarWhereWithAggregatesInput!]
+  id: StringWithAggregatesFilter
+  vin: StringWithAggregatesFilter
+  modelId: StringWithAggregatesFilter
+  seriesId: StringNullableWithAggregatesFilter
+  year: IntWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  deleted: DateTimeNullableWithAggregatesFilter
+}
+
+input VehicleTypeWhereUniqueInput {
+  id: String
+  name: String
+  AND: [VehicleTypeWhereInput!]
+  OR: [VehicleTypeWhereInput!]
+  NOT: [VehicleTypeWhereInput!]
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+  models: ModelListRelationFilter
+}
+
+enum VehicleTypeScalarFieldEnum {
+  id
+  name
+  createdAt
+  updatedAt
+  deleted
+}
+
+input VehicleTypeOrderByWithAggregationInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+  _count: VehicleTypeCountOrderByAggregateInput
+  _max: VehicleTypeMaxOrderByAggregateInput
+  _min: VehicleTypeMinOrderByAggregateInput
+}
+
+input VehicleTypeCountOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input VehicleTypeMaxOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input VehicleTypeMinOrderByAggregateInput {
+  id: SortOrder
+  name: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  deleted: SortOrder
+}
+
+input VehicleTypeScalarWhereWithAggregatesInput {
+  AND: [VehicleTypeScalarWhereWithAggregatesInput!]
+  OR: [VehicleTypeScalarWhereWithAggregatesInput!]
+  NOT: [VehicleTypeScalarWhereWithAggregatesInput!]
+  id: StringWithAggregatesFilter
+  name: StringWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+  deleted: DateTimeNullableWithAggregatesFilter
+}
+
+type Mutation {
+  runNewProcess: Int
+  addTest: ServerProcessMirror!
+  createManyLot(data: [LotCreateManyInput!]!): AffectedRowsOutput!
+  createOneLot(data: LotCreateInput!): Lot!
+  deleteManyLot(where: LotWhereInput): AffectedRowsOutput!
+  deleteOneLot(where: LotWhereUniqueInput!): Lot
+  updateManyLot(data: LotUpdateManyMutationInput!, where: LotWhereInput): AffectedRowsOutput!
+  updateOneLot(data: LotUpdateInput!, where: LotWhereUniqueInput!): Lot
+  upsertOneLot(where: LotWhereUniqueInput!, create: LotCreateInput!, update: LotUpdateInput!): Lot!
+  createManyMake(data: [MakeCreateManyInput!]!): AffectedRowsOutput!
+  createOneMake(data: MakeCreateInput!): Make!
+  deleteManyMake(where: MakeWhereInput): AffectedRowsOutput!
+  deleteOneMake(where: MakeWhereUniqueInput!): Make
+  updateManyMake(data: MakeUpdateManyMutationInput!, where: MakeWhereInput): AffectedRowsOutput!
+  updateOneMake(data: MakeUpdateInput!, where: MakeWhereUniqueInput!): Make
+  upsertOneMake(where: MakeWhereUniqueInput!, create: MakeCreateInput!, update: MakeUpdateInput!): Make!
+  createManyModel(data: [ModelCreateManyInput!]!): AffectedRowsOutput!
+  createOneModel(data: ModelCreateInput!): Model!
+  deleteManyModel(where: ModelWhereInput): AffectedRowsOutput!
+  deleteOneModel(where: ModelWhereUniqueInput!): Model
+  updateManyModel(data: ModelUpdateManyMutationInput!, where: ModelWhereInput): AffectedRowsOutput!
+  updateOneModel(data: ModelUpdateInput!, where: ModelWhereUniqueInput!): Model
+  upsertOneModel(where: ModelWhereUniqueInput!, create: ModelCreateInput!, update: ModelUpdateInput!): Model!
+  createManySeries(data: [SeriesCreateManyInput!]!): AffectedRowsOutput!
+  createOneSeries(data: SeriesCreateInput!): Series!
+  deleteManySeries(where: SeriesWhereInput): AffectedRowsOutput!
+  deleteOneSeries(where: SeriesWhereUniqueInput!): Series
+  updateManySeries(data: SeriesUpdateManyMutationInput!, where: SeriesWhereInput): AffectedRowsOutput!
+  updateOneSeries(data: SeriesUpdateInput!, where: SeriesWhereUniqueInput!): Series
+  upsertOneSeries(where: SeriesWhereUniqueInput!, create: SeriesCreateInput!, update: SeriesUpdateInput!): Series!
+  createManyServerProcessMirror(data: [ServerProcessMirrorCreateManyInput!]!): AffectedRowsOutput!
+  createOneServerProcessMirror(data: ServerProcessMirrorCreateInput!): ServerProcessMirror!
+  deleteManyServerProcessMirror(where: ServerProcessMirrorWhereInput): AffectedRowsOutput!
+  deleteOneServerProcessMirror(where: ServerProcessMirrorWhereUniqueInput!): ServerProcessMirror
+  updateManyServerProcessMirror(data: ServerProcessMirrorUpdateManyMutationInput!, where: ServerProcessMirrorWhereInput): AffectedRowsOutput!
+  updateOneServerProcessMirror(data: ServerProcessMirrorUpdateInput!, where: ServerProcessMirrorWhereUniqueInput!): ServerProcessMirror
+  upsertOneServerProcessMirror(where: ServerProcessMirrorWhereUniqueInput!, create: ServerProcessMirrorCreateInput!, update: ServerProcessMirrorUpdateInput!): ServerProcessMirror!
+  createManyVehicle(data: [VehicleCreateManyInput!]!): AffectedRowsOutput!
+  createOneVehicle(data: VehicleCreateInput!): Vehicle!
+  deleteManyVehicle(where: VehicleWhereInput): AffectedRowsOutput!
+  deleteOneVehicle(where: VehicleWhereUniqueInput!): Vehicle
+  updateManyVehicle(data: VehicleUpdateManyMutationInput!, where: VehicleWhereInput): AffectedRowsOutput!
+  updateOneVehicle(data: VehicleUpdateInput!, where: VehicleWhereUniqueInput!): Vehicle
+  upsertOneVehicle(where: VehicleWhereUniqueInput!, create: VehicleCreateInput!, update: VehicleUpdateInput!): Vehicle!
+  createManyVehicleType(data: [VehicleTypeCreateManyInput!]!): AffectedRowsOutput!
+  createOneVehicleType(data: VehicleTypeCreateInput!): VehicleType!
+  deleteManyVehicleType(where: VehicleTypeWhereInput): AffectedRowsOutput!
+  deleteOneVehicleType(where: VehicleTypeWhereUniqueInput!): VehicleType
+  updateManyVehicleType(data: VehicleTypeUpdateManyMutationInput!, where: VehicleTypeWhereInput): AffectedRowsOutput!
+  updateOneVehicleType(data: VehicleTypeUpdateInput!, where: VehicleTypeWhereUniqueInput!): VehicleType
+  upsertOneVehicleType(where: VehicleTypeWhereUniqueInput!, create: VehicleTypeCreateInput!, update: VehicleTypeUpdateInput!): VehicleType!
+}
+
+input LotCreateManyInput {
+  id: String
+  auction: Auction!
+  lotNumber: Int!
+  sellingBranch: String!
+  saleLocation: String!
+  location: String!
+  auctionDateTime: DateTime!
+  seller: String!
+  preAccidentValue: String!
+  actualCashValue: String!
+  estimatedRepairCost: String!
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String!
+  titleType: String!
+  titleBrand: String!
+  titleNotes: String!
+  primaryDamage: String!
+  secondaryDamage: String!
+  loss: String!
+  startCode: String!
+  highlights: String!
+  key: String!
+  odometer: Int!
+  engine: String!
+  fuelType: String!
+  transmission: String!
+  drivelineType: String!
+  interiorColor: String!
+  exteriorColor: String!
+  buyNowPrice: Int
+  bodyStyle: String!
+  airbagsStatus: String!
+  cylinders: Int
+  manufacturedIn: String!
+  sourceLastUpdated: String!
+  vehicleId: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: LotUnprocessedCreateEnvelopeInput!
+}
+
+input LotUnprocessedCreateEnvelopeInput {
+  set: LotUnprocessedCreateInput
+}
+
+input LotUnprocessedCreateInput {
+  leftTrans: String!
+  prebidClosedTrans: String!
+  buyNowCloseTime: DateTime
+  soldBefore: Int
+  status: Int!
+  imgs: LotUnprocessedCreateimgsInput
+}
+
+input LotUnprocessedCreateimgsInput {
+  set: [String!]!
+}
+
+input LotCreateInput {
+  id: String
+  auction: Auction!
+  lotNumber: Int!
+  sellingBranch: String!
+  saleLocation: String!
+  location: String!
+  auctionDateTime: DateTime!
+  seller: String!
+  preAccidentValue: String!
+  actualCashValue: String!
+  estimatedRepairCost: String!
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String!
+  titleType: String!
+  titleBrand: String!
+  titleNotes: String!
+  primaryDamage: String!
+  secondaryDamage: String!
+  loss: String!
+  startCode: String!
+  highlights: String!
+  key: String!
+  odometer: Int!
+  engine: String!
+  fuelType: String!
+  transmission: String!
+  drivelineType: String!
+  interiorColor: String!
+  exteriorColor: String!
+  buyNowPrice: Int
+  bodyStyle: String!
+  airbagsStatus: String!
+  cylinders: Int
+  manufacturedIn: String!
+  sourceLastUpdated: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: LotUnprocessedCreateEnvelopeInput!
+  vehicle: VehicleCreateNestedOneWithoutLotsInput!
+}
+
+input VehicleCreateNestedOneWithoutLotsInput {
+  create: VehicleCreateWithoutLotsInput
+  connectOrCreate: VehicleCreateOrConnectWithoutLotsInput
+  connect: VehicleWhereUniqueInput
+}
+
+input VehicleCreateWithoutLotsInput {
+  id: String
+  vin: String!
+  year: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: VehicleUnprocessedCreateEnvelopeInput!
+  model: ModelCreateNestedOneWithoutVehiclesInput!
+  series: SeriesCreateNestedOneWithoutVehiclesInput
+}
+
+input VehicleUnprocessedCreateEnvelopeInput {
+  set: VehicleUnprocessedCreateInput
+}
+
+input VehicleUnprocessedCreateInput {
+  name: String!
+  tag: String!
+}
+
+input ModelCreateNestedOneWithoutVehiclesInput {
+  create: ModelCreateWithoutVehiclesInput
+  connectOrCreate: ModelCreateOrConnectWithoutVehiclesInput
+  connect: ModelWhereUniqueInput
+}
+
+input ModelCreateWithoutVehiclesInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  make: MakeCreateNestedOneWithoutModelsInput!
+  vehicleType: VehicleTypeCreateNestedOneWithoutModelsInput!
+  serieses: SeriesCreateNestedManyWithoutModelInput
+}
+
+input MakeCreateNestedOneWithoutModelsInput {
+  create: MakeCreateWithoutModelsInput
+  connectOrCreate: MakeCreateOrConnectWithoutModelsInput
+  connect: MakeWhereUniqueInput
+}
+
+input MakeCreateWithoutModelsInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+}
+
+input MakeCreateOrConnectWithoutModelsInput {
+  where: MakeWhereUniqueInput!
+  create: MakeCreateWithoutModelsInput!
+}
+
+input VehicleTypeCreateNestedOneWithoutModelsInput {
+  create: VehicleTypeCreateWithoutModelsInput
+  connectOrCreate: VehicleTypeCreateOrConnectWithoutModelsInput
+  connect: VehicleTypeWhereUniqueInput
+}
+
+input VehicleTypeCreateWithoutModelsInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input VehicleTypeCreateOrConnectWithoutModelsInput {
+  where: VehicleTypeWhereUniqueInput!
+  create: VehicleTypeCreateWithoutModelsInput!
+}
+
+input SeriesCreateNestedManyWithoutModelInput {
+  create: [SeriesCreateWithoutModelInput!]
+  connectOrCreate: [SeriesCreateOrConnectWithoutModelInput!]
+  createMany: SeriesCreateManyModelInputEnvelope
+  connect: [SeriesWhereUniqueInput!]
+}
+
+input SeriesCreateWithoutModelInput {
+  id: String
+  name: String!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  vehicles: VehicleCreateNestedManyWithoutSeriesInput
+}
+
+input VehicleCreateNestedManyWithoutSeriesInput {
+  create: [VehicleCreateWithoutSeriesInput!]
+  connectOrCreate: [VehicleCreateOrConnectWithoutSeriesInput!]
+  createMany: VehicleCreateManySeriesInputEnvelope
+  connect: [VehicleWhereUniqueInput!]
+}
+
+input VehicleCreateWithoutSeriesInput {
+  id: String
+  vin: String!
+  year: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: VehicleUnprocessedCreateEnvelopeInput!
+  model: ModelCreateNestedOneWithoutVehiclesInput!
+  lots: LotCreateNestedManyWithoutVehicleInput
+}
+
+input LotCreateNestedManyWithoutVehicleInput {
+  create: [LotCreateWithoutVehicleInput!]
+  connectOrCreate: [LotCreateOrConnectWithoutVehicleInput!]
+  createMany: LotCreateManyVehicleInputEnvelope
+  connect: [LotWhereUniqueInput!]
+}
+
+input LotCreateWithoutVehicleInput {
+  id: String
+  auction: Auction!
+  lotNumber: Int!
+  sellingBranch: String!
+  saleLocation: String!
+  location: String!
+  auctionDateTime: DateTime!
+  seller: String!
+  preAccidentValue: String!
+  actualCashValue: String!
+  estimatedRepairCost: String!
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String!
+  titleType: String!
+  titleBrand: String!
+  titleNotes: String!
+  primaryDamage: String!
+  secondaryDamage: String!
+  loss: String!
+  startCode: String!
+  highlights: String!
+  key: String!
+  odometer: Int!
+  engine: String!
+  fuelType: String!
+  transmission: String!
+  drivelineType: String!
+  interiorColor: String!
+  exteriorColor: String!
+  buyNowPrice: Int
+  bodyStyle: String!
+  airbagsStatus: String!
+  cylinders: Int
+  manufacturedIn: String!
+  sourceLastUpdated: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: LotUnprocessedCreateEnvelopeInput!
+}
+
+input LotCreateOrConnectWithoutVehicleInput {
+  where: LotWhereUniqueInput!
+  create: LotCreateWithoutVehicleInput!
+}
+
+input LotCreateManyVehicleInputEnvelope {
+  data: [LotCreateManyVehicleInput!]!
+}
+
+input LotCreateManyVehicleInput {
+  id: String
+  auction: Auction!
+  lotNumber: Int!
+  sellingBranch: String!
+  saleLocation: String!
+  location: String!
+  auctionDateTime: DateTime!
+  seller: String!
+  preAccidentValue: String!
+  actualCashValue: String!
+  estimatedRepairCost: String!
+  lastPreBid: Float
+  finalBid: Int
+  saleStatus: String!
+  titleType: String!
+  titleBrand: String!
+  titleNotes: String!
+  primaryDamage: String!
+  secondaryDamage: String!
+  loss: String!
+  startCode: String!
+  highlights: String!
+  key: String!
+  odometer: Int!
+  engine: String!
+  fuelType: String!
+  transmission: String!
+  drivelineType: String!
+  interiorColor: String!
+  exteriorColor: String!
+  buyNowPrice: Int
+  bodyStyle: String!
+  airbagsStatus: String!
+  cylinders: Int
+  manufacturedIn: String!
+  sourceLastUpdated: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: LotUnprocessedCreateEnvelopeInput!
+}
+
+input VehicleCreateOrConnectWithoutSeriesInput {
+  where: VehicleWhereUniqueInput!
+  create: VehicleCreateWithoutSeriesInput!
+}
+
+input VehicleCreateManySeriesInputEnvelope {
+  data: [VehicleCreateManySeriesInput!]!
+}
+
+input VehicleCreateManySeriesInput {
+  id: String
+  vin: String!
+  modelId: String!
+  year: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: VehicleUnprocessedCreateEnvelopeInput!
+}
+
+input SeriesCreateOrConnectWithoutModelInput {
+  where: SeriesWhereUniqueInput!
+  create: SeriesCreateWithoutModelInput!
+}
+
+input SeriesCreateManyModelInputEnvelope {
+  data: [SeriesCreateManyModelInput!]!
+}
+
+input SeriesCreateManyModelInput {
+  id: String
+  name: String!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input ModelCreateOrConnectWithoutVehiclesInput {
+  where: ModelWhereUniqueInput!
+  create: ModelCreateWithoutVehiclesInput!
+}
+
+input SeriesCreateNestedOneWithoutVehiclesInput {
+  create: SeriesCreateWithoutVehiclesInput
+  connectOrCreate: SeriesCreateOrConnectWithoutVehiclesInput
+  connect: SeriesWhereUniqueInput
+}
+
+input SeriesCreateWithoutVehiclesInput {
+  id: String
+  name: String!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  model: ModelCreateNestedOneWithoutSeriesesInput!
+}
+
+input ModelCreateNestedOneWithoutSeriesesInput {
+  create: ModelCreateWithoutSeriesesInput
+  connectOrCreate: ModelCreateOrConnectWithoutSeriesesInput
+  connect: ModelWhereUniqueInput
+}
+
+input ModelCreateWithoutSeriesesInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  make: MakeCreateNestedOneWithoutModelsInput!
+  vehicleType: VehicleTypeCreateNestedOneWithoutModelsInput!
+  vehicles: VehicleCreateNestedManyWithoutModelInput
+}
+
+input VehicleCreateNestedManyWithoutModelInput {
+  create: [VehicleCreateWithoutModelInput!]
+  connectOrCreate: [VehicleCreateOrConnectWithoutModelInput!]
+  createMany: VehicleCreateManyModelInputEnvelope
+  connect: [VehicleWhereUniqueInput!]
+}
+
+input VehicleCreateWithoutModelInput {
+  id: String
+  vin: String!
+  year: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: VehicleUnprocessedCreateEnvelopeInput!
+  series: SeriesCreateNestedOneWithoutVehiclesInput
+  lots: LotCreateNestedManyWithoutVehicleInput
+}
+
+input VehicleCreateOrConnectWithoutModelInput {
+  where: VehicleWhereUniqueInput!
+  create: VehicleCreateWithoutModelInput!
+}
+
+input VehicleCreateManyModelInputEnvelope {
+  data: [VehicleCreateManyModelInput!]!
+}
+
+input VehicleCreateManyModelInput {
+  id: String
+  vin: String!
+  seriesId: String
+  year: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: VehicleUnprocessedCreateEnvelopeInput!
+}
+
+input ModelCreateOrConnectWithoutSeriesesInput {
+  where: ModelWhereUniqueInput!
+  create: ModelCreateWithoutSeriesesInput!
+}
+
+input SeriesCreateOrConnectWithoutVehiclesInput {
+  where: SeriesWhereUniqueInput!
+  create: SeriesCreateWithoutVehiclesInput!
+}
+
+input VehicleCreateOrConnectWithoutLotsInput {
+  where: VehicleWhereUniqueInput!
+  create: VehicleCreateWithoutLotsInput!
+}
+
+input LotUpdateManyMutationInput {
+  auction: EnumAuctionFieldUpdateOperationsInput
+  lotNumber: IntFieldUpdateOperationsInput
+  sellingBranch: StringFieldUpdateOperationsInput
+  saleLocation: StringFieldUpdateOperationsInput
+  location: StringFieldUpdateOperationsInput
+  auctionDateTime: DateTimeFieldUpdateOperationsInput
+  seller: StringFieldUpdateOperationsInput
+  preAccidentValue: StringFieldUpdateOperationsInput
+  actualCashValue: StringFieldUpdateOperationsInput
+  estimatedRepairCost: StringFieldUpdateOperationsInput
+  lastPreBid: NullableFloatFieldUpdateOperationsInput
+  finalBid: NullableIntFieldUpdateOperationsInput
+  saleStatus: StringFieldUpdateOperationsInput
+  titleType: StringFieldUpdateOperationsInput
+  titleBrand: StringFieldUpdateOperationsInput
+  titleNotes: StringFieldUpdateOperationsInput
+  primaryDamage: StringFieldUpdateOperationsInput
+  secondaryDamage: StringFieldUpdateOperationsInput
+  loss: StringFieldUpdateOperationsInput
+  startCode: StringFieldUpdateOperationsInput
+  highlights: StringFieldUpdateOperationsInput
+  key: StringFieldUpdateOperationsInput
+  odometer: IntFieldUpdateOperationsInput
+  engine: StringFieldUpdateOperationsInput
+  fuelType: StringFieldUpdateOperationsInput
+  transmission: StringFieldUpdateOperationsInput
+  drivelineType: StringFieldUpdateOperationsInput
+  interiorColor: StringFieldUpdateOperationsInput
+  exteriorColor: StringFieldUpdateOperationsInput
+  buyNowPrice: NullableIntFieldUpdateOperationsInput
+  bodyStyle: StringFieldUpdateOperationsInput
+  airbagsStatus: StringFieldUpdateOperationsInput
+  cylinders: NullableIntFieldUpdateOperationsInput
+  manufacturedIn: StringFieldUpdateOperationsInput
+  sourceLastUpdated: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: LotUnprocessedUpdateEnvelopeInput
+}
+
+input EnumAuctionFieldUpdateOperationsInput {
+  set: Auction
+}
+
+input IntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+input StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input DateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input NullableFloatFieldUpdateOperationsInput {
+  set: Float
+  increment: Float
+  decrement: Float
+  multiply: Float
+  divide: Float
+  unset: Boolean
+}
+
+input NullableIntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+  unset: Boolean
+}
+
+input NullableDateTimeFieldUpdateOperationsInput {
+  set: DateTime
+  unset: Boolean
+}
+
+input LotUnprocessedUpdateEnvelopeInput {
+  set: LotUnprocessedCreateInput
+  update: LotUnprocessedUpdateInput
+}
+
+input LotUnprocessedUpdateInput {
+  leftTrans: StringFieldUpdateOperationsInput
+  prebidClosedTrans: StringFieldUpdateOperationsInput
+  buyNowCloseTime: NullableDateTimeFieldUpdateOperationsInput
+  soldBefore: NullableIntFieldUpdateOperationsInput
+  status: IntFieldUpdateOperationsInput
+  imgs: LotUnprocessedUpdateimgsInput
+}
+
+input LotUnprocessedUpdateimgsInput {
+  set: [String!]
+  push: [String!]
+}
+
+input LotUpdateInput {
+  auction: EnumAuctionFieldUpdateOperationsInput
+  lotNumber: IntFieldUpdateOperationsInput
+  sellingBranch: StringFieldUpdateOperationsInput
+  saleLocation: StringFieldUpdateOperationsInput
+  location: StringFieldUpdateOperationsInput
+  auctionDateTime: DateTimeFieldUpdateOperationsInput
+  seller: StringFieldUpdateOperationsInput
+  preAccidentValue: StringFieldUpdateOperationsInput
+  actualCashValue: StringFieldUpdateOperationsInput
+  estimatedRepairCost: StringFieldUpdateOperationsInput
+  lastPreBid: NullableFloatFieldUpdateOperationsInput
+  finalBid: NullableIntFieldUpdateOperationsInput
+  saleStatus: StringFieldUpdateOperationsInput
+  titleType: StringFieldUpdateOperationsInput
+  titleBrand: StringFieldUpdateOperationsInput
+  titleNotes: StringFieldUpdateOperationsInput
+  primaryDamage: StringFieldUpdateOperationsInput
+  secondaryDamage: StringFieldUpdateOperationsInput
+  loss: StringFieldUpdateOperationsInput
+  startCode: StringFieldUpdateOperationsInput
+  highlights: StringFieldUpdateOperationsInput
+  key: StringFieldUpdateOperationsInput
+  odometer: IntFieldUpdateOperationsInput
+  engine: StringFieldUpdateOperationsInput
+  fuelType: StringFieldUpdateOperationsInput
+  transmission: StringFieldUpdateOperationsInput
+  drivelineType: StringFieldUpdateOperationsInput
+  interiorColor: StringFieldUpdateOperationsInput
+  exteriorColor: StringFieldUpdateOperationsInput
+  buyNowPrice: NullableIntFieldUpdateOperationsInput
+  bodyStyle: StringFieldUpdateOperationsInput
+  airbagsStatus: StringFieldUpdateOperationsInput
+  cylinders: NullableIntFieldUpdateOperationsInput
+  manufacturedIn: StringFieldUpdateOperationsInput
+  sourceLastUpdated: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: LotUnprocessedUpdateEnvelopeInput
+  vehicle: VehicleUpdateOneRequiredWithoutLotsNestedInput
+}
+
+input VehicleUpdateOneRequiredWithoutLotsNestedInput {
+  create: VehicleCreateWithoutLotsInput
+  connectOrCreate: VehicleCreateOrConnectWithoutLotsInput
+  upsert: VehicleUpsertWithoutLotsInput
+  connect: VehicleWhereUniqueInput
+  update: VehicleUpdateToOneWithWhereWithoutLotsInput
+}
+
+input VehicleUpsertWithoutLotsInput {
+  update: VehicleUpdateWithoutLotsInput!
+  create: VehicleCreateWithoutLotsInput!
+  where: VehicleWhereInput
+}
+
+input VehicleUpdateWithoutLotsInput {
+  vin: StringFieldUpdateOperationsInput
+  year: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: VehicleUnprocessedUpdateEnvelopeInput
+  model: ModelUpdateOneRequiredWithoutVehiclesNestedInput
+  series: SeriesUpdateOneWithoutVehiclesNestedInput
+}
+
+input VehicleUnprocessedUpdateEnvelopeInput {
+  set: VehicleUnprocessedCreateInput
+  update: VehicleUnprocessedUpdateInput
+}
+
+input VehicleUnprocessedUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  tag: StringFieldUpdateOperationsInput
+}
+
+input ModelUpdateOneRequiredWithoutVehiclesNestedInput {
+  create: ModelCreateWithoutVehiclesInput
+  connectOrCreate: ModelCreateOrConnectWithoutVehiclesInput
+  upsert: ModelUpsertWithoutVehiclesInput
+  connect: ModelWhereUniqueInput
+  update: ModelUpdateToOneWithWhereWithoutVehiclesInput
+}
+
+input ModelUpsertWithoutVehiclesInput {
+  update: ModelUpdateWithoutVehiclesInput!
+  create: ModelCreateWithoutVehiclesInput!
+  where: ModelWhereInput
+}
+
+input ModelUpdateWithoutVehiclesInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  make: MakeUpdateOneRequiredWithoutModelsNestedInput
+  vehicleType: VehicleTypeUpdateOneRequiredWithoutModelsNestedInput
+  serieses: SeriesUpdateManyWithoutModelNestedInput
+}
+
+input MakeUpdateOneRequiredWithoutModelsNestedInput {
+  create: MakeCreateWithoutModelsInput
+  connectOrCreate: MakeCreateOrConnectWithoutModelsInput
+  upsert: MakeUpsertWithoutModelsInput
+  connect: MakeWhereUniqueInput
+  update: MakeUpdateToOneWithWhereWithoutModelsInput
+}
+
+input MakeUpsertWithoutModelsInput {
+  update: MakeUpdateWithoutModelsInput!
+  create: MakeCreateWithoutModelsInput!
+  where: MakeWhereInput
+}
+
+input MakeUpdateWithoutModelsInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deletedAt: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input MakeUpdateToOneWithWhereWithoutModelsInput {
+  where: MakeWhereInput
+  data: MakeUpdateWithoutModelsInput!
+}
+
+input VehicleTypeUpdateOneRequiredWithoutModelsNestedInput {
+  create: VehicleTypeCreateWithoutModelsInput
+  connectOrCreate: VehicleTypeCreateOrConnectWithoutModelsInput
+  upsert: VehicleTypeUpsertWithoutModelsInput
+  connect: VehicleTypeWhereUniqueInput
+  update: VehicleTypeUpdateToOneWithWhereWithoutModelsInput
+}
+
+input VehicleTypeUpsertWithoutModelsInput {
+  update: VehicleTypeUpdateWithoutModelsInput!
+  create: VehicleTypeCreateWithoutModelsInput!
+  where: VehicleTypeWhereInput
+}
+
+input VehicleTypeUpdateWithoutModelsInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input VehicleTypeUpdateToOneWithWhereWithoutModelsInput {
+  where: VehicleTypeWhereInput
+  data: VehicleTypeUpdateWithoutModelsInput!
+}
+
+input SeriesUpdateManyWithoutModelNestedInput {
+  create: [SeriesCreateWithoutModelInput!]
+  connectOrCreate: [SeriesCreateOrConnectWithoutModelInput!]
+  upsert: [SeriesUpsertWithWhereUniqueWithoutModelInput!]
+  createMany: SeriesCreateManyModelInputEnvelope
+  set: [SeriesWhereUniqueInput!]
+  disconnect: [SeriesWhereUniqueInput!]
+  delete: [SeriesWhereUniqueInput!]
+  connect: [SeriesWhereUniqueInput!]
+  update: [SeriesUpdateWithWhereUniqueWithoutModelInput!]
+  updateMany: [SeriesUpdateManyWithWhereWithoutModelInput!]
+  deleteMany: [SeriesScalarWhereInput!]
+}
+
+input SeriesUpsertWithWhereUniqueWithoutModelInput {
+  where: SeriesWhereUniqueInput!
+  update: SeriesUpdateWithoutModelInput!
+  create: SeriesCreateWithoutModelInput!
+}
+
+input SeriesUpdateWithoutModelInput {
+  name: StringFieldUpdateOperationsInput
+  minYear: IntFieldUpdateOperationsInput
+  maxYear: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  vehicles: VehicleUpdateManyWithoutSeriesNestedInput
+}
+
+input VehicleUpdateManyWithoutSeriesNestedInput {
+  create: [VehicleCreateWithoutSeriesInput!]
+  connectOrCreate: [VehicleCreateOrConnectWithoutSeriesInput!]
+  upsert: [VehicleUpsertWithWhereUniqueWithoutSeriesInput!]
+  createMany: VehicleCreateManySeriesInputEnvelope
+  set: [VehicleWhereUniqueInput!]
+  disconnect: [VehicleWhereUniqueInput!]
+  delete: [VehicleWhereUniqueInput!]
+  connect: [VehicleWhereUniqueInput!]
+  update: [VehicleUpdateWithWhereUniqueWithoutSeriesInput!]
+  updateMany: [VehicleUpdateManyWithWhereWithoutSeriesInput!]
+  deleteMany: [VehicleScalarWhereInput!]
+}
+
+input VehicleUpsertWithWhereUniqueWithoutSeriesInput {
+  where: VehicleWhereUniqueInput!
+  update: VehicleUpdateWithoutSeriesInput!
+  create: VehicleCreateWithoutSeriesInput!
+}
+
+input VehicleUpdateWithoutSeriesInput {
+  vin: StringFieldUpdateOperationsInput
+  year: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: VehicleUnprocessedUpdateEnvelopeInput
+  model: ModelUpdateOneRequiredWithoutVehiclesNestedInput
+  lots: LotUpdateManyWithoutVehicleNestedInput
+}
+
+input LotUpdateManyWithoutVehicleNestedInput {
+  create: [LotCreateWithoutVehicleInput!]
+  connectOrCreate: [LotCreateOrConnectWithoutVehicleInput!]
+  upsert: [LotUpsertWithWhereUniqueWithoutVehicleInput!]
+  createMany: LotCreateManyVehicleInputEnvelope
+  set: [LotWhereUniqueInput!]
+  disconnect: [LotWhereUniqueInput!]
+  delete: [LotWhereUniqueInput!]
+  connect: [LotWhereUniqueInput!]
+  update: [LotUpdateWithWhereUniqueWithoutVehicleInput!]
+  updateMany: [LotUpdateManyWithWhereWithoutVehicleInput!]
+  deleteMany: [LotScalarWhereInput!]
+}
+
+input LotUpsertWithWhereUniqueWithoutVehicleInput {
+  where: LotWhereUniqueInput!
+  update: LotUpdateWithoutVehicleInput!
+  create: LotCreateWithoutVehicleInput!
+}
+
+input LotUpdateWithoutVehicleInput {
+  auction: EnumAuctionFieldUpdateOperationsInput
+  lotNumber: IntFieldUpdateOperationsInput
+  sellingBranch: StringFieldUpdateOperationsInput
+  saleLocation: StringFieldUpdateOperationsInput
+  location: StringFieldUpdateOperationsInput
+  auctionDateTime: DateTimeFieldUpdateOperationsInput
+  seller: StringFieldUpdateOperationsInput
+  preAccidentValue: StringFieldUpdateOperationsInput
+  actualCashValue: StringFieldUpdateOperationsInput
+  estimatedRepairCost: StringFieldUpdateOperationsInput
+  lastPreBid: NullableFloatFieldUpdateOperationsInput
+  finalBid: NullableIntFieldUpdateOperationsInput
+  saleStatus: StringFieldUpdateOperationsInput
+  titleType: StringFieldUpdateOperationsInput
+  titleBrand: StringFieldUpdateOperationsInput
+  titleNotes: StringFieldUpdateOperationsInput
+  primaryDamage: StringFieldUpdateOperationsInput
+  secondaryDamage: StringFieldUpdateOperationsInput
+  loss: StringFieldUpdateOperationsInput
+  startCode: StringFieldUpdateOperationsInput
+  highlights: StringFieldUpdateOperationsInput
+  key: StringFieldUpdateOperationsInput
+  odometer: IntFieldUpdateOperationsInput
+  engine: StringFieldUpdateOperationsInput
+  fuelType: StringFieldUpdateOperationsInput
+  transmission: StringFieldUpdateOperationsInput
+  drivelineType: StringFieldUpdateOperationsInput
+  interiorColor: StringFieldUpdateOperationsInput
+  exteriorColor: StringFieldUpdateOperationsInput
+  buyNowPrice: NullableIntFieldUpdateOperationsInput
+  bodyStyle: StringFieldUpdateOperationsInput
+  airbagsStatus: StringFieldUpdateOperationsInput
+  cylinders: NullableIntFieldUpdateOperationsInput
+  manufacturedIn: StringFieldUpdateOperationsInput
+  sourceLastUpdated: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: LotUnprocessedUpdateEnvelopeInput
+}
+
+input LotUpdateWithWhereUniqueWithoutVehicleInput {
+  where: LotWhereUniqueInput!
+  data: LotUpdateWithoutVehicleInput!
+}
+
+input LotUpdateManyWithWhereWithoutVehicleInput {
+  where: LotScalarWhereInput!
+  data: LotUpdateManyMutationInput!
+}
+
+input LotScalarWhereInput {
+  AND: [LotScalarWhereInput!]
+  OR: [LotScalarWhereInput!]
+  NOT: [LotScalarWhereInput!]
+  id: StringFilter
+  auction: EnumAuctionFilter
+  lotNumber: IntFilter
+  sellingBranch: StringFilter
+  saleLocation: StringFilter
+  location: StringFilter
+  auctionDateTime: DateTimeFilter
+  seller: StringFilter
+  preAccidentValue: StringFilter
+  actualCashValue: StringFilter
+  estimatedRepairCost: StringFilter
+  lastPreBid: FloatNullableFilter
+  finalBid: IntNullableFilter
+  saleStatus: StringFilter
+  titleType: StringFilter
+  titleBrand: StringFilter
+  titleNotes: StringFilter
+  primaryDamage: StringFilter
+  secondaryDamage: StringFilter
+  loss: StringFilter
+  startCode: StringFilter
+  highlights: StringFilter
+  key: StringFilter
+  odometer: IntFilter
+  engine: StringFilter
+  fuelType: StringFilter
+  transmission: StringFilter
+  drivelineType: StringFilter
+  interiorColor: StringFilter
+  exteriorColor: StringFilter
+  buyNowPrice: IntNullableFilter
+  bodyStyle: StringFilter
+  airbagsStatus: StringFilter
+  cylinders: IntNullableFilter
+  manufacturedIn: StringFilter
+  sourceLastUpdated: StringFilter
+  vehicleId: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+}
+
+input VehicleUpdateWithWhereUniqueWithoutSeriesInput {
+  where: VehicleWhereUniqueInput!
+  data: VehicleUpdateWithoutSeriesInput!
+}
+
+input VehicleUpdateManyWithWhereWithoutSeriesInput {
+  where: VehicleScalarWhereInput!
+  data: VehicleUpdateManyMutationInput!
+}
+
+input VehicleScalarWhereInput {
+  AND: [VehicleScalarWhereInput!]
+  OR: [VehicleScalarWhereInput!]
+  NOT: [VehicleScalarWhereInput!]
+  id: StringFilter
+  vin: StringFilter
+  modelId: StringFilter
+  seriesId: StringNullableFilter
+  year: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+}
+
+input VehicleUpdateManyMutationInput {
+  vin: StringFieldUpdateOperationsInput
+  year: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: VehicleUnprocessedUpdateEnvelopeInput
+}
+
+input SeriesUpdateWithWhereUniqueWithoutModelInput {
+  where: SeriesWhereUniqueInput!
+  data: SeriesUpdateWithoutModelInput!
+}
+
+input SeriesUpdateManyWithWhereWithoutModelInput {
+  where: SeriesScalarWhereInput!
+  data: SeriesUpdateManyMutationInput!
+}
+
+input SeriesScalarWhereInput {
+  AND: [SeriesScalarWhereInput!]
+  OR: [SeriesScalarWhereInput!]
+  NOT: [SeriesScalarWhereInput!]
+  id: StringFilter
+  modelId: StringFilter
+  name: StringFilter
+  minYear: IntFilter
+  maxYear: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+}
+
+input SeriesUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  minYear: IntFieldUpdateOperationsInput
+  maxYear: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input ModelUpdateToOneWithWhereWithoutVehiclesInput {
+  where: ModelWhereInput
+  data: ModelUpdateWithoutVehiclesInput!
+}
+
+input SeriesUpdateOneWithoutVehiclesNestedInput {
+  create: SeriesCreateWithoutVehiclesInput
+  connectOrCreate: SeriesCreateOrConnectWithoutVehiclesInput
+  upsert: SeriesUpsertWithoutVehiclesInput
+  disconnect: Boolean
+  delete: SeriesWhereInput
+  connect: SeriesWhereUniqueInput
+  update: SeriesUpdateToOneWithWhereWithoutVehiclesInput
+}
+
+input SeriesUpsertWithoutVehiclesInput {
+  update: SeriesUpdateWithoutVehiclesInput!
+  create: SeriesCreateWithoutVehiclesInput!
+  where: SeriesWhereInput
+}
+
+input SeriesUpdateWithoutVehiclesInput {
+  name: StringFieldUpdateOperationsInput
+  minYear: IntFieldUpdateOperationsInput
+  maxYear: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  model: ModelUpdateOneRequiredWithoutSeriesesNestedInput
+}
+
+input ModelUpdateOneRequiredWithoutSeriesesNestedInput {
+  create: ModelCreateWithoutSeriesesInput
+  connectOrCreate: ModelCreateOrConnectWithoutSeriesesInput
+  upsert: ModelUpsertWithoutSeriesesInput
+  connect: ModelWhereUniqueInput
+  update: ModelUpdateToOneWithWhereWithoutSeriesesInput
+}
+
+input ModelUpsertWithoutSeriesesInput {
+  update: ModelUpdateWithoutSeriesesInput!
+  create: ModelCreateWithoutSeriesesInput!
+  where: ModelWhereInput
+}
+
+input ModelUpdateWithoutSeriesesInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  make: MakeUpdateOneRequiredWithoutModelsNestedInput
+  vehicleType: VehicleTypeUpdateOneRequiredWithoutModelsNestedInput
+  vehicles: VehicleUpdateManyWithoutModelNestedInput
+}
+
+input VehicleUpdateManyWithoutModelNestedInput {
+  create: [VehicleCreateWithoutModelInput!]
+  connectOrCreate: [VehicleCreateOrConnectWithoutModelInput!]
+  upsert: [VehicleUpsertWithWhereUniqueWithoutModelInput!]
+  createMany: VehicleCreateManyModelInputEnvelope
+  set: [VehicleWhereUniqueInput!]
+  disconnect: [VehicleWhereUniqueInput!]
+  delete: [VehicleWhereUniqueInput!]
+  connect: [VehicleWhereUniqueInput!]
+  update: [VehicleUpdateWithWhereUniqueWithoutModelInput!]
+  updateMany: [VehicleUpdateManyWithWhereWithoutModelInput!]
+  deleteMany: [VehicleScalarWhereInput!]
+}
+
+input VehicleUpsertWithWhereUniqueWithoutModelInput {
+  where: VehicleWhereUniqueInput!
+  update: VehicleUpdateWithoutModelInput!
+  create: VehicleCreateWithoutModelInput!
+}
+
+input VehicleUpdateWithoutModelInput {
+  vin: StringFieldUpdateOperationsInput
+  year: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: VehicleUnprocessedUpdateEnvelopeInput
+  series: SeriesUpdateOneWithoutVehiclesNestedInput
+  lots: LotUpdateManyWithoutVehicleNestedInput
+}
+
+input VehicleUpdateWithWhereUniqueWithoutModelInput {
+  where: VehicleWhereUniqueInput!
+  data: VehicleUpdateWithoutModelInput!
+}
+
+input VehicleUpdateManyWithWhereWithoutModelInput {
+  where: VehicleScalarWhereInput!
+  data: VehicleUpdateManyMutationInput!
+}
+
+input ModelUpdateToOneWithWhereWithoutSeriesesInput {
+  where: ModelWhereInput
+  data: ModelUpdateWithoutSeriesesInput!
+}
+
+input SeriesUpdateToOneWithWhereWithoutVehiclesInput {
+  where: SeriesWhereInput
+  data: SeriesUpdateWithoutVehiclesInput!
+}
+
+input VehicleUpdateToOneWithWhereWithoutLotsInput {
+  where: VehicleWhereInput
+  data: VehicleUpdateWithoutLotsInput!
+}
+
+input MakeCreateManyInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+}
+
+input MakeCreateInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deletedAt: DateTime
+  models: ModelCreateNestedManyWithoutMakeInput
+}
+
+input ModelCreateNestedManyWithoutMakeInput {
+  create: [ModelCreateWithoutMakeInput!]
+  connectOrCreate: [ModelCreateOrConnectWithoutMakeInput!]
+  createMany: ModelCreateManyMakeInputEnvelope
+  connect: [ModelWhereUniqueInput!]
+}
+
+input ModelCreateWithoutMakeInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  vehicleType: VehicleTypeCreateNestedOneWithoutModelsInput!
+  vehicles: VehicleCreateNestedManyWithoutModelInput
+  serieses: SeriesCreateNestedManyWithoutModelInput
+}
+
+input ModelCreateOrConnectWithoutMakeInput {
+  where: ModelWhereUniqueInput!
+  create: ModelCreateWithoutMakeInput!
+}
+
+input ModelCreateManyMakeInputEnvelope {
+  data: [ModelCreateManyMakeInput!]!
+}
+
+input ModelCreateManyMakeInput {
+  id: String
+  vehicleTypeId: String!
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input MakeUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deletedAt: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input MakeUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deletedAt: NullableDateTimeFieldUpdateOperationsInput
+  models: ModelUpdateManyWithoutMakeNestedInput
+}
+
+input ModelUpdateManyWithoutMakeNestedInput {
+  create: [ModelCreateWithoutMakeInput!]
+  connectOrCreate: [ModelCreateOrConnectWithoutMakeInput!]
+  upsert: [ModelUpsertWithWhereUniqueWithoutMakeInput!]
+  createMany: ModelCreateManyMakeInputEnvelope
+  set: [ModelWhereUniqueInput!]
+  disconnect: [ModelWhereUniqueInput!]
+  delete: [ModelWhereUniqueInput!]
+  connect: [ModelWhereUniqueInput!]
+  update: [ModelUpdateWithWhereUniqueWithoutMakeInput!]
+  updateMany: [ModelUpdateManyWithWhereWithoutMakeInput!]
+  deleteMany: [ModelScalarWhereInput!]
+}
+
+input ModelUpsertWithWhereUniqueWithoutMakeInput {
+  where: ModelWhereUniqueInput!
+  update: ModelUpdateWithoutMakeInput!
+  create: ModelCreateWithoutMakeInput!
+}
+
+input ModelUpdateWithoutMakeInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  vehicleType: VehicleTypeUpdateOneRequiredWithoutModelsNestedInput
+  vehicles: VehicleUpdateManyWithoutModelNestedInput
+  serieses: SeriesUpdateManyWithoutModelNestedInput
+}
+
+input ModelUpdateWithWhereUniqueWithoutMakeInput {
+  where: ModelWhereUniqueInput!
+  data: ModelUpdateWithoutMakeInput!
+}
+
+input ModelUpdateManyWithWhereWithoutMakeInput {
+  where: ModelScalarWhereInput!
+  data: ModelUpdateManyMutationInput!
+}
+
+input ModelScalarWhereInput {
+  AND: [ModelScalarWhereInput!]
+  OR: [ModelScalarWhereInput!]
+  NOT: [ModelScalarWhereInput!]
+  id: StringFilter
+  makeId: StringFilter
+  vehicleTypeId: StringFilter
+  name: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+}
+
+input ModelUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input ModelCreateManyInput {
+  id: String
+  makeId: String!
+  vehicleTypeId: String!
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input ModelCreateInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  make: MakeCreateNestedOneWithoutModelsInput!
+  vehicleType: VehicleTypeCreateNestedOneWithoutModelsInput!
+  vehicles: VehicleCreateNestedManyWithoutModelInput
+  serieses: SeriesCreateNestedManyWithoutModelInput
+}
+
+input ModelUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  make: MakeUpdateOneRequiredWithoutModelsNestedInput
+  vehicleType: VehicleTypeUpdateOneRequiredWithoutModelsNestedInput
+  vehicles: VehicleUpdateManyWithoutModelNestedInput
+  serieses: SeriesUpdateManyWithoutModelNestedInput
+}
+
+input SeriesCreateManyInput {
+  id: String
+  modelId: String!
+  name: String!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input SeriesCreateInput {
+  id: String
+  name: String!
+  minYear: Int!
+  maxYear: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  model: ModelCreateNestedOneWithoutSeriesesInput!
+  vehicles: VehicleCreateNestedManyWithoutSeriesInput
+}
+
+input SeriesUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  minYear: IntFieldUpdateOperationsInput
+  maxYear: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  model: ModelUpdateOneRequiredWithoutSeriesesNestedInput
+  vehicles: VehicleUpdateManyWithoutSeriesNestedInput
+}
+
+input ServerProcessMirrorCreateManyInput {
+  id: String
+  parentProcessId: String
+  type: ServerProcessType!
+  status: Status!
+  props: JSON!
+  state: JSON!
+  log: [LogRecordCreateInput!]
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input LogRecordCreateInput {
+  type: LogRecordType!
+  value: JSON!
+}
+
+input ServerProcessMirrorCreateInput {
+  id: String
+  type: ServerProcessType!
+  status: Status!
+  props: JSON!
+  state: JSON!
+  log: [LogRecordCreateInput!]
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  parentProcess: ServerProcessMirrorCreateNestedOneWithoutSubProcessesInput
+  subProcesses: ServerProcessMirrorCreateNestedManyWithoutParentProcessInput
+}
+
+input ServerProcessMirrorCreateNestedOneWithoutSubProcessesInput {
+  create: ServerProcessMirrorCreateWithoutSubProcessesInput
+  connectOrCreate: ServerProcessMirrorCreateOrConnectWithoutSubProcessesInput
+  connect: ServerProcessMirrorWhereUniqueInput
+}
+
+input ServerProcessMirrorCreateWithoutSubProcessesInput {
+  id: String
+  type: ServerProcessType!
+  status: Status!
+  props: JSON!
+  state: JSON!
+  log: [LogRecordCreateInput!]
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  parentProcess: ServerProcessMirrorCreateNestedOneWithoutSubProcessesInput
+}
+
+input ServerProcessMirrorCreateOrConnectWithoutSubProcessesInput {
+  where: ServerProcessMirrorWhereUniqueInput!
+  create: ServerProcessMirrorCreateWithoutSubProcessesInput!
+}
+
+input ServerProcessMirrorCreateNestedManyWithoutParentProcessInput {
+  create: [ServerProcessMirrorCreateWithoutParentProcessInput!]
+  connectOrCreate: [ServerProcessMirrorCreateOrConnectWithoutParentProcessInput!]
+  createMany: ServerProcessMirrorCreateManyParentProcessInputEnvelope
+  connect: [ServerProcessMirrorWhereUniqueInput!]
+}
+
+input ServerProcessMirrorCreateWithoutParentProcessInput {
+  id: String
+  type: ServerProcessType!
+  status: Status!
+  props: JSON!
+  state: JSON!
+  log: [LogRecordCreateInput!]
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  subProcesses: ServerProcessMirrorCreateNestedManyWithoutParentProcessInput
+}
+
+input ServerProcessMirrorCreateOrConnectWithoutParentProcessInput {
+  where: ServerProcessMirrorWhereUniqueInput!
+  create: ServerProcessMirrorCreateWithoutParentProcessInput!
+}
+
+input ServerProcessMirrorCreateManyParentProcessInputEnvelope {
+  data: [ServerProcessMirrorCreateManyParentProcessInput!]!
+}
+
+input ServerProcessMirrorCreateManyParentProcessInput {
+  id: String
+  type: ServerProcessType!
+  status: Status!
+  props: JSON!
+  state: JSON!
+  log: [LogRecordCreateInput!]
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input ServerProcessMirrorUpdateManyMutationInput {
+  type: EnumServerProcessTypeFieldUpdateOperationsInput
+  status: EnumStatusFieldUpdateOperationsInput
+  props: JSON
+  state: JSON
+  log: [LogRecordCreateInput!]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input EnumServerProcessTypeFieldUpdateOperationsInput {
+  set: ServerProcessType
+}
+
+input EnumStatusFieldUpdateOperationsInput {
+  set: Status
+}
+
+input ServerProcessMirrorUpdateInput {
+  type: EnumServerProcessTypeFieldUpdateOperationsInput
+  status: EnumStatusFieldUpdateOperationsInput
+  props: JSON
+  state: JSON
+  log: [LogRecordCreateInput!]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  parentProcess: ServerProcessMirrorUpdateOneWithoutSubProcessesNestedInput
+  subProcesses: ServerProcessMirrorUpdateManyWithoutParentProcessNestedInput
+}
+
+input ServerProcessMirrorUpdateOneWithoutSubProcessesNestedInput {
+  create: ServerProcessMirrorCreateWithoutSubProcessesInput
+  connectOrCreate: ServerProcessMirrorCreateOrConnectWithoutSubProcessesInput
+  upsert: ServerProcessMirrorUpsertWithoutSubProcessesInput
+  disconnect: Boolean
+  delete: ServerProcessMirrorWhereInput
+  connect: ServerProcessMirrorWhereUniqueInput
+  update: ServerProcessMirrorUpdateToOneWithWhereWithoutSubProcessesInput
+}
+
+input ServerProcessMirrorUpsertWithoutSubProcessesInput {
+  update: ServerProcessMirrorUpdateWithoutSubProcessesInput!
+  create: ServerProcessMirrorCreateWithoutSubProcessesInput!
+  where: ServerProcessMirrorWhereInput
+}
+
+input ServerProcessMirrorUpdateWithoutSubProcessesInput {
+  type: EnumServerProcessTypeFieldUpdateOperationsInput
+  status: EnumStatusFieldUpdateOperationsInput
+  props: JSON
+  state: JSON
+  log: [LogRecordCreateInput!]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  parentProcess: ServerProcessMirrorUpdateOneWithoutSubProcessesNestedInput
+}
+
+input ServerProcessMirrorUpdateToOneWithWhereWithoutSubProcessesInput {
+  where: ServerProcessMirrorWhereInput
+  data: ServerProcessMirrorUpdateWithoutSubProcessesInput!
+}
+
+input ServerProcessMirrorUpdateManyWithoutParentProcessNestedInput {
+  create: [ServerProcessMirrorCreateWithoutParentProcessInput!]
+  connectOrCreate: [ServerProcessMirrorCreateOrConnectWithoutParentProcessInput!]
+  upsert: [ServerProcessMirrorUpsertWithWhereUniqueWithoutParentProcessInput!]
+  createMany: ServerProcessMirrorCreateManyParentProcessInputEnvelope
+  set: [ServerProcessMirrorWhereUniqueInput!]
+  disconnect: [ServerProcessMirrorWhereUniqueInput!]
+  delete: [ServerProcessMirrorWhereUniqueInput!]
+  connect: [ServerProcessMirrorWhereUniqueInput!]
+  update: [ServerProcessMirrorUpdateWithWhereUniqueWithoutParentProcessInput!]
+  updateMany: [ServerProcessMirrorUpdateManyWithWhereWithoutParentProcessInput!]
+  deleteMany: [ServerProcessMirrorScalarWhereInput!]
+}
+
+input ServerProcessMirrorUpsertWithWhereUniqueWithoutParentProcessInput {
+  where: ServerProcessMirrorWhereUniqueInput!
+  update: ServerProcessMirrorUpdateWithoutParentProcessInput!
+  create: ServerProcessMirrorCreateWithoutParentProcessInput!
+}
+
+input ServerProcessMirrorUpdateWithoutParentProcessInput {
+  type: EnumServerProcessTypeFieldUpdateOperationsInput
+  status: EnumStatusFieldUpdateOperationsInput
+  props: JSON
+  state: JSON
+  log: [LogRecordCreateInput!]
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  subProcesses: ServerProcessMirrorUpdateManyWithoutParentProcessNestedInput
+}
+
+input ServerProcessMirrorUpdateWithWhereUniqueWithoutParentProcessInput {
+  where: ServerProcessMirrorWhereUniqueInput!
+  data: ServerProcessMirrorUpdateWithoutParentProcessInput!
+}
+
+input ServerProcessMirrorUpdateManyWithWhereWithoutParentProcessInput {
+  where: ServerProcessMirrorScalarWhereInput!
+  data: ServerProcessMirrorUpdateManyMutationInput!
+}
+
+input ServerProcessMirrorScalarWhereInput {
+  AND: [ServerProcessMirrorScalarWhereInput!]
+  OR: [ServerProcessMirrorScalarWhereInput!]
+  NOT: [ServerProcessMirrorScalarWhereInput!]
+  id: StringFilter
+  parentProcessId: StringNullableFilter
+  type: EnumServerProcessTypeFilter
+  status: EnumStatusFilter
+  props: JsonFilter
+  state: JsonFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+  deleted: DateTimeNullableFilter
+}
+
+input VehicleCreateManyInput {
+  id: String
+  vin: String!
+  modelId: String!
+  seriesId: String
+  year: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: VehicleUnprocessedCreateEnvelopeInput!
+}
+
+input VehicleCreateInput {
+  id: String
+  vin: String!
+  year: Int!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  unprocessed: VehicleUnprocessedCreateEnvelopeInput!
+  model: ModelCreateNestedOneWithoutVehiclesInput!
+  series: SeriesCreateNestedOneWithoutVehiclesInput
+  lots: LotCreateNestedManyWithoutVehicleInput
+}
+
+input VehicleUpdateInput {
+  vin: StringFieldUpdateOperationsInput
+  year: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  unprocessed: VehicleUnprocessedUpdateEnvelopeInput
+  model: ModelUpdateOneRequiredWithoutVehiclesNestedInput
+  series: SeriesUpdateOneWithoutVehiclesNestedInput
+  lots: LotUpdateManyWithoutVehicleNestedInput
+}
+
+input VehicleTypeCreateManyInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input VehicleTypeCreateInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  models: ModelCreateNestedManyWithoutVehicleTypeInput
+}
+
+input ModelCreateNestedManyWithoutVehicleTypeInput {
+  create: [ModelCreateWithoutVehicleTypeInput!]
+  connectOrCreate: [ModelCreateOrConnectWithoutVehicleTypeInput!]
+  createMany: ModelCreateManyVehicleTypeInputEnvelope
+  connect: [ModelWhereUniqueInput!]
+}
+
+input ModelCreateWithoutVehicleTypeInput {
+  id: String
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+  make: MakeCreateNestedOneWithoutModelsInput!
+  vehicles: VehicleCreateNestedManyWithoutModelInput
+  serieses: SeriesCreateNestedManyWithoutModelInput
+}
+
+input ModelCreateOrConnectWithoutVehicleTypeInput {
+  where: ModelWhereUniqueInput!
+  create: ModelCreateWithoutVehicleTypeInput!
+}
+
+input ModelCreateManyVehicleTypeInputEnvelope {
+  data: [ModelCreateManyVehicleTypeInput!]!
+}
+
+input ModelCreateManyVehicleTypeInput {
+  id: String
+  makeId: String!
+  name: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  deleted: DateTime
+}
+
+input VehicleTypeUpdateManyMutationInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input VehicleTypeUpdateInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  models: ModelUpdateManyWithoutVehicleTypeNestedInput
+}
+
+input ModelUpdateManyWithoutVehicleTypeNestedInput {
+  create: [ModelCreateWithoutVehicleTypeInput!]
+  connectOrCreate: [ModelCreateOrConnectWithoutVehicleTypeInput!]
+  upsert: [ModelUpsertWithWhereUniqueWithoutVehicleTypeInput!]
+  createMany: ModelCreateManyVehicleTypeInputEnvelope
+  set: [ModelWhereUniqueInput!]
+  disconnect: [ModelWhereUniqueInput!]
+  delete: [ModelWhereUniqueInput!]
+  connect: [ModelWhereUniqueInput!]
+  update: [ModelUpdateWithWhereUniqueWithoutVehicleTypeInput!]
+  updateMany: [ModelUpdateManyWithWhereWithoutVehicleTypeInput!]
+  deleteMany: [ModelScalarWhereInput!]
+}
+
+input ModelUpsertWithWhereUniqueWithoutVehicleTypeInput {
+  where: ModelWhereUniqueInput!
+  update: ModelUpdateWithoutVehicleTypeInput!
+  create: ModelCreateWithoutVehicleTypeInput!
+}
+
+input ModelUpdateWithoutVehicleTypeInput {
+  name: StringFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+  deleted: NullableDateTimeFieldUpdateOperationsInput
+  make: MakeUpdateOneRequiredWithoutModelsNestedInput
+  vehicles: VehicleUpdateManyWithoutModelNestedInput
+  serieses: SeriesUpdateManyWithoutModelNestedInput
+}
+
+input ModelUpdateWithWhereUniqueWithoutVehicleTypeInput {
+  where: ModelWhereUniqueInput!
+  data: ModelUpdateWithoutVehicleTypeInput!
+}
+
+input ModelUpdateManyWithWhereWithoutVehicleTypeInput {
+  where: ModelScalarWhereInput!
+  data: ModelUpdateManyMutationInput!
+}
+
+type Subscription {
+  serverProcessAdded: ServerProcessMirror!
+}

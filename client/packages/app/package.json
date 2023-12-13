@@ -1,0 +1,31 @@
+{
+  "version": "0.0.0",
+  "name": "app",
+  "main": "index.ts",
+  "scripts": {
+    "graphql:generate": "graphql-codegen",
+    "graphql:generate:watch": "graphql-codegen -w"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.9",
+    "@gluestack-style/react": "^1.0.38",
+    "@gluestack-ui/config": "^1.0.11",
+    "@gluestack-ui/themed": "^1.0.35",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "dripsy": "^4.3.4",
+    "graphql": "^16.8.1",
+    "moti": "latest",
+    "react-native-svg": "^14.1.0",
+    "solito": "4.2.0"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@parcel/watcher": "^2.3.0",
+    "eslint-plugin-react": "^7.33.2",
+    "typescript": "^5.3.3"
+  }
+}
